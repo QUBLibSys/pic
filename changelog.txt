@@ -1,0 +1,37 @@
+** note I am using this bootstrap template http://getbootstrap.com/docs/4.0/examples/jumbotron/  **
+
+** changes to pil **
+
+changed database name to pil
+changed table name to records
+added meta data to header
+added bootstrap css
+added bootstrap js
+added /assets folder
+added /assets/css folder
+added /assets/js folder
+added /assets/img folder
+added /assets/fonts folder
+addee space for google analytics code in header
+added footer
+added search bar to header
+removed search results from homepage
+changed form method to GET (search term now appears in URL and allows for page refresh, bookmarking etc)
+changed pagination css to work with bootstrap v4
+added config/pagination.php file
+changed all controller names to lowercase and removed '_control'
+added datatables js
+added 'all records' view
+added 'all records' model
+added filters on all records view
+added 'collection' table to database
+
+Changes as of 09-04-2018
+
+Delete column we dont need (screenshot available) ALTER TABLE collections DROP COLUMN `brand_main``brand_light`
+Fix Collections dropdown on nav bar
+Add collection page with links 
+Add individual collection pages
+Update model for removed columns
+Add button to scroller for number of records which redirects to search results - *need to make button clickable only*
+Images now showing on collection pages

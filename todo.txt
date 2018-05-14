@@ -1,0 +1,11 @@
+** to do before going live **
+
+rename database
+rename database user
+create strong password for database user
+change $config['base_url'] in config.php
+add meta data content to header
+add a favicon
+add collections to home page
+add random item to home page
+remove /index from pagination

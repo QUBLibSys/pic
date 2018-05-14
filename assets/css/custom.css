@@ -1,0 +1,344 @@
+/* custom css rules */
+
+body {
+	padding-top: 5rem;
+	font-family: 'Roboto', sans-serif;
+}
+
+.bg-blue {
+	background-color: #004D7E;
+}
+
+/* 'view more' button on homepage just below intorduction */
+.view-more-btn{
+  background-color: #d63107;
+  border: none;
+}
+
+/* Text Colour for heading on all records */
+#all-header {
+	color: white;
+}
+
+/*All writing in the navbar to be white*/
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+	padding-left: 40px;
+}
+
+/*'Advanced Search' on results page*/
+#advanced_btn {
+	color: rgb(197, 197, 197);
+}
+
+/*Search results page title and results info*/
+#search_result_no {
+	color: white;
+}
+
+/*Button on homepage*/
+.learn-more-btn {
+	background-color: #d63107;
+}
+
+/*Colour of text on homescreen pil description*/
+.homeBanner {
+	color: white;
+}
+
+/*jumbo colour*/
+.jumbotron {
+    background-color: white;
+}
+
+.title-blue {
+	color: #004D7E;
+}
+
+/*For the banner on all records, keeps text sitting below nav bar*/
+.heading {
+	padding: 3rem 1.5rem;
+	text-align: center;
+}
+
+/* accordion css */
+
+#accordion a {
+	color: rgb(80, 80, 80);
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-size: 16px;
+}
+.card {
+	padding: 10px;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-style: normal;
+	font-size: 16px;
+	/*color: rgb(80, 80, 80);*/
+	border-radius: 0px; 
+}
+
+#pil-nav-bar {
+	background-color: #d63107!important;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-size: 17px;
+}
+#pil-nav-bar img {
+	width: 150px;
+	display: block;
+}
+
+/*Search Button on navbar*/
+
+.btn-outline-success {
+	color: white;
+	border-color: white;
+}
+.btn-outline-success:hover {
+	background-color: grey;
+	color: white;
+	border-color: white;
+}
+/*Pagination*/
+
+.page-item.active .page-link {
+	background-color: #d63107;
+	border: none;
+}
+.page-link a {
+	color: black;
+}
+.pagination {
+	padding: 50px;
+}
+
+
+/*Top of page button styling*/
+#myBtn {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Fixed/sticky position */
+	bottom: 20px;
+	font-size: 18px;
+	/* Place the button at the bottom of the page */
+	right: 30px;
+	/* Place the button 30px from the right */
+	z-index: 99;
+	/* Make sure it does not overlap */
+	border: none;
+	/* Remove borders */
+	outline: none;
+	/* Remove outline */
+	background-color: #212529a8;
+	/* Set a background color */
+	color: white;
+	/* Text color */
+	cursor: pointer;
+	/* Add a mouse pointer on hover */
+	padding: 15px;
+	/* Some padding */
+	border-radius: 10px;
+	/* Rounded corners */
+}
+#myBtn:hover {
+	background-color: #555;
+	/* Add a dark-grey background on hover */
+}
+/* The Overlay (background) */
+
+.overlay {
+	/* Height & width depends on how you want to reveal the overlay (see JS below) */
+	height: 100%;
+	width: 0;
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	background-color: rgb(0, 0, 0);
+	/* Black fallback color */
+	background-color: rgba(0, 0, 0, 0.9);
+	/* Black w/opacity */
+	overflow-x: hidden;
+	/* Disable horizontal scroll */
+	transition: 0.5s;
+	/* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+/* Position the content inside the overlay */
+
+.overlay-content {
+	position: relative;
+	top: 25%;
+	/* 25% from the top */
+	width: 100%;
+	/* 100% width */
+	text-align: center;
+	/* Centered text/links */
+	margin-top: 30px;
+	/* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+/* The navigation links inside the overlay */
+
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #818181;
+	display: block;
+	/* Display block instead of inline */
+	transition: 0.3s;
+	/* Transition effects on hover (color) */
+}
+/* When you mouse over the navigation links, change their color */
+
+.overlay a:hover, .overlay a:focus {
+	color: #f1f1f1;
+}
+/* Position the close button (top right corner) */
+
+.overlay .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+}
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+
+@media screen and (max-height: 450px) {
+	.overlay a {
+		font-size: 20px
+	}
+	.overlay .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	}
+}
+
+/* BRAND COLOURS */
+
+.list-view-brand {
+	background-color: white;
+	border-left-color: #004b87;
+    border-left-width: 10px;
+}
+
+.home-view-brand {
+	background-color: white;
+	border-left-color: #004b87;
+    border-left-width: 10px;
+    border-right-color: #004b87;
+    border-right-width: 10px;
+}
+
+
+/*Link to encore in search results*/
+#encore {
+	color: white;
+}
+
+/*START FOOTER STYLING*/
+
+  /*When hovering over links, remove underlines and change colour*/
+  a:hover{
+	  color: grey;
+	  text-decoration: none;
+  }
+
+  footer a {
+	  color: white;
+  }
+
+  footer h3 {
+	  color: white;
+  }
+
+  footer p {
+	  color: white;
+  }
+
+  address {
+  	color: white;
+  }
+
+/* Social Media icons */
+
+.social-icons a {
+	    letter-spacing: 0.5em;
+}
+
+ #accordion {
+  padding: 1rem 0 0 0;
+}
+
+.collection-menu {
+	border-left-width: 15px;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+.collection-img {
+    width: 8em;
+    height: 100%;
+    position: inherit;
+    padding: 0em 0 1em 0;
+}
+
+/*highlight words on search results page*/
+.highlight {
+	background-color: #FFFF88;
+}
+
+/*tags on search results page*/
+.tag-outline {
+	color: #9B9B9B;
+    border: 1px solid #9B9B9B;
+    background-color: transparent;
+}
+
+/*home collection swiper*/ 
+.card {
+  display: block; 
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+    transition: box-shadow .25s; 
+}
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.card-title a {
+  color: #000;
+  text-decoration: none !important;
+}
+
+.card-content {
+  padding:15px;
+  text-align:left;
+}
+
+.card-title {
+  margin-top:0px;
+  font-weight: 700;
+  font-size: 1.65em;
+}
+
+.collection-slider {
+	background: linear-gradient(180deg, #004D7E 50%, #ffffff 50%);
+}
+
+.collection-slider .swiper-slide {
+  padding: 1em;
+}
+
+.swiper-scrollbar-drag {
+    background: rgb(0, 77, 125) !important;
+}
