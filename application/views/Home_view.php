@@ -60,8 +60,8 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="">Filter by Year</span>
 				</div>
-				<input type="text" name="start_year" class="form-control" placeholder="start year">
-				<input type="text" name="end_year" class="form-control" placeholder="end year">
+				<input type="text" name="start_year" class="form-control" placeholder="start year" maxlength="4">
+				<input type="text" name="end_year" class="form-control" placeholder="end year" maxlength="4">
 			</div>
 			<br>
 			<input class="btn btn-primary" type="submit" name="submit">
