@@ -1,4 +1,4 @@
-<!-- dwiper style -->
+<!-- swiper style -->
 <style>
 .swiper-container {
 	width: 100%;
@@ -7,7 +7,6 @@
 .swiper-slide {
 	text-align: center;
 	font-size: 18px;
-	/*background: #fff;*/
 	/* Center slide text vertically */
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -74,7 +73,6 @@
 <div class="container-fluid collection-slider">
   	<div class="swiper-container" href="<?php echo base_url() ?>collmain">
   		<div class="swiper-wrapper">
-
   		<!-- start for each -->
   		<?php 
 		foreach ($collectionInfo as $collection):
@@ -85,7 +83,6 @@
 			$collection->info = 'No Information Available. Coming soon.';
 		}
 		?>
-
 		<div class="swiper-slide">
 					<div class="container">
 						<div class="row">
@@ -124,63 +121,47 @@
 </div>
 
 <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 3,
-      spaceBetween: 30,
-      centeredSlides: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      scrollbar: {
-        el: '.swiper-scrollbar',
-        hide: true,
-      },
-      breakpoints: {
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-        },
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 30,
-        },
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        }
-      }
-    });
-  </script>
-
-  <script type="text/javascript">
-	
-$(document).ready(function($){
-
-// Remove empty fields from GET forms
- $("form").submit(function() {
-  	$(this).find(":input").filter(function(){ return !this.value; }).attr("disabled", "disabled");
-	return true; // ensure form still submits
-});
-
-// Un-disable form fields when page loads, in case they click back after submission
-$( "form" ).find( ":input" ).prop( "disabled", false );
-	
+<script>
+var swiper = new Swiper('.swiper-container', {
+	slidesPerView: 3,
+	spaceBetween: 30,
+	centeredSlides: true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	scrollbar: {
+		el: '.swiper-scrollbar',
+		hide: true,
+	},
+	breakpoints: {
+		1024: {
+			slidesPerView: 4,
+			spaceBetween: 40,
+		},
+		768: {
+			slidesPerView: 1,
+			spaceBetween: 30,
+		},
+		640: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+		},
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+		}
+	}
 });
 </script>
 
-<script type="text/javascript">
-	$(".dropdown-menu a").click(function(){
-		var selText = $(this).text();
-   //Get the value
-   var value = $(this).attr("value");
-  //Put the retrieved value into the hidden input
-  $("input[name='coll_id']").val(value);
-  $(this).parents('.input-group-prepend').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+<script>
+$(".dropdown-menu a").click(function () {
+	var selText = $(this).text();
+	//Get the value
+	var value = $(this).attr("value");
+	//Put the retrieved value into the hidden input
+	$("input[name='coll_id']").val(value);
+	$(this).parents('.input-group-prepend').find('.dropdown-toggle').html(selText + ' <span class="caret"></span>');
 });
 </script>
