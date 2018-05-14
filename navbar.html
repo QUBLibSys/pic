@@ -1,0 +1,51 @@
+<style>
+
+li {
+    float: left;
+}
+li a{
+    display:inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ul {
+    display:inline-block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /*Prevent element from leaving the bar*/
+    background-color: #333;
+}
+
+li a:hover{
+    background-color: #111;
+}
+
+.active{
+    background-color: #d8023e;
+}
+</style>
+
+
+<title></title>
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<ul>
+<li><a href="index.php">Home</a></li>
+<li><a href="logo.png">About</a></li>
+<li><a href="search.php">Search</a></li>
+</ul>
+
+<form action="search.php" method="POST">
+        <input type="text" name="search" placeholder="Search">
+        <button type="submit" name="submit-search">Search</button>
+        </form>
