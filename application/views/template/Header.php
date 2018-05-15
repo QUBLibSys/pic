@@ -30,8 +30,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'UA-117120910-1');
 </script>
-
-
 	<!-- START CSS -->
 
 	<!-- bootstrap -->
@@ -56,14 +54,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<!-- highlight -->
-	<script type="text/javascript" src="<?php echo base_url();?>assets/js/highlight.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.es6.min.js"></script>
 
 	<!-- fonts -->
 	<script type="text/javascript" src="https://use.fontawesome.com/f20579457b.js"></script>
 
 	<!-- swiper -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
-	
+
 	<!-- END JS -->
 
 	<!-- google tracking code -->

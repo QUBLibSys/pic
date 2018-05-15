@@ -27,7 +27,7 @@ class Search_model extends CI_Model {
         $query = $this->db->get();
         return $query->result_object();
     }
-
+   
     public function record_count($search_term, $coll_id, $start_year, $end_year) {
 
         $search_term = $this->session->userdata('search_word');
@@ -48,8 +48,6 @@ class Search_model extends CI_Model {
             $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
         }
         $this->db->group_start() 
-        ->like('marc_099_coll_ident', $search_term)
-        ->or_like('marc_100_main_pers_name', $search_term)
         ->or_like('marc_100_main_pers_name', $search_term)
         ->or_like('marc_260c_pub_year', $search_term)
         ->or_like('marc_110_main_corp_name', $search_term)
@@ -57,7 +55,6 @@ class Search_model extends CI_Model {
         ->or_like('marc_710_add_corp_name', $search_term)
         ->or_like('marc_600_subj_add_pers_name', $search_term)
         ->or_like('marc_610_subj_add_corp_name', $search_term)
-        ->or_like('marc_245_title_stmt', $search_term)
         ->or_like('marc_130_main_uniform_title', $search_term)
         ->or_like('marc_240_uniform_title', $search_term)
         ->or_like('marc_242_trans_title', $search_term)
@@ -68,11 +65,13 @@ class Search_model extends CI_Model {
         ->or_like('marc_250_edition_stmt', $search_term)
         ->or_like('marc_260_pub', $search_term)
         ->or_like('marc_264_rda_pub', $search_term)
-        ->group_end();  
+        ->group_end(); 
+        $this->db->where('MATCH (marc_099_coll_ident) AGAINST ("'. $search_term .'")', NULL, FALSE);
+        $this->db->or_where('MATCH (marc_245_title_stmt) AGAINST ("'. $search_term .'")', NULL, FALSE);
         $query = $this->db->get();
         return $query->num_rows();
     }
-
+    
     public function fetch_records($limit, $start, $search_term, $coll_id, $start_year, $end_year) {
 
         $search_term = $this->session->userdata('search_word');
@@ -94,8 +93,6 @@ class Search_model extends CI_Model {
             $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
         }
         $this->db->group_start() 
-        ->like('marc_099_coll_ident', $search_term)
-        ->or_like('marc_100_main_pers_name', $search_term)
         ->or_like('marc_100_main_pers_name', $search_term)
         ->or_like('marc_260c_pub_year', $search_term)
         ->or_like('marc_110_main_corp_name', $search_term)
@@ -103,7 +100,6 @@ class Search_model extends CI_Model {
         ->or_like('marc_710_add_corp_name', $search_term)
         ->or_like('marc_600_subj_add_pers_name', $search_term)
         ->or_like('marc_610_subj_add_corp_name', $search_term)
-        ->or_like('marc_245_title_stmt', $search_term)
         ->or_like('marc_130_main_uniform_title', $search_term)
         ->or_like('marc_240_uniform_title', $search_term)
         ->or_like('marc_242_trans_title', $search_term)
@@ -114,8 +110,10 @@ class Search_model extends CI_Model {
         ->or_like('marc_250_edition_stmt', $search_term)
         ->or_like('marc_260_pub', $search_term)
         ->or_like('marc_264_rda_pub', $search_term)
-        ->group_end();  
-        $this->db->order_by('marc_260c_pub_year', 'ASC');
+        ->group_end();
+        $this->db->where('MATCH (marc_099_coll_ident) AGAINST ("'. $search_term .'")', NULL, FALSE);
+        $this->db->or_where('MATCH (marc_245_title_stmt) AGAINST ("'. $search_term .'")', NULL, FALSE);
+
         $this->db->limit($limit, $start);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {

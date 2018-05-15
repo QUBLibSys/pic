@@ -68,15 +68,15 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
             <?php endforeach; ?>
           </div>
         </div>
-        <input type="text" name="q" class="form-control" value="<?php echo $this->input->get('q') ?>">
+        <input type="text" name="q" class="form-control" value="<?php echo $this->input->get('q') ?>" placeholder="search term">
         <input type="hidden" name="coll_id" class="form-control" value="<?php echo $this->input->get('coll_id') ?>">
       </div> <!-- end input group -->
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="">Filter by Year</span>
         </div>
-        <input type="text" name="start_year" class="form-control" value="<?php echo $this->input->get('start_year') ?>">
-        <input type="text" name="end_year" class="form-control" value="<?php echo $this->input->get('end_year') ?>">
+        <input type="text" name="start_year" class="form-control" value="<?php echo $this->input->get('start_year') ?>" placeholder="start year" maxlength="4">
+        <input type="text" name="end_year" class="form-control" value="<?php echo $this->input->get('end_year') ?>" placeholder="end year" maxlength="4">
       </div>
       <br>
       <input class="btn btn-primary" type="submit" name="submit">
@@ -236,12 +236,17 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
 <?php endif; ?>
 
-<script>
-    $(document).ready(function(){
-        $("h5, h6").highlight("<?php echo $q_term ?>");
-        $("h5, h6").highlight("<?php echo $start_year_term ?>");
-        $("h5, h6").highlight("<?php echo $end_year_term ?>");
-    });
+<script type="text/javascript">
+  $("h5, h6").mark("<?php echo $q_term ?>", {
+    "element": "span",
+    "className": "highlight"
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+  });
 </script>
 
 <script type="text/javascript"> 
