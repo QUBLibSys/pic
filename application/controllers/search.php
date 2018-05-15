@@ -18,11 +18,16 @@ class Search extends CI_Controller{
     }
 
     public function results() {
+
+      if($this->input->ip_address('143.117.194.36')) {
+        $this->output->enable_profiler(TRUE);  
+      }
+      
         //  if q is empty set search_term to NULL, else set it to value of q
-      $search_term  = empty($this->input->get('q')) ? NULL : $this->input->get('q');
-      $coll_id      = empty($this->input->get('coll_id')) ? NULL : $this->input->get('coll_id');
-      $start_year   = empty($this->input->get('start_year')) ? NULL : $this->input->get('start_year');
-      $end_year     = empty($this->input->get('end_year')) ? NULL : $this->input->get('end_year');
+      $search_term  = trim(empty($this->input->get('q')) ? NULL : $this->input->get('q'));
+      $coll_id      = trim(empty($this->input->get('coll_id')) ? NULL : $this->input->get('coll_id'));
+      $start_year   = trim(empty($this->input->get('start_year')) ? NULL : $this->input->get('start_year'));
+      $end_year     = trim(empty($this->input->get('end_year')) ? NULL : $this->input->get('end_year'));
 
       $this->session->set_tempdata("search_word","$search_term");
 
