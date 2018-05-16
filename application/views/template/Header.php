@@ -79,7 +79,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-blue">
 		<a class="navbar-brand" href="<?php echo base_url() ?>"><strong>PIC</strong></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
@@ -108,7 +108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</nav>
 
-	<button onclick="topFunction()" id="myBtn" title="Top of Page"><b>Top</b></button>
+	<button onclick="topFunction()" id="myBtn" title="Top of Page"><strong>Top</strong></button>
 
 <script>
 // When the user scrolls down 20px from the top of the document, show the button
