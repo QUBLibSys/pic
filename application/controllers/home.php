@@ -17,8 +17,8 @@ class Home extends CI_Controller{
 
         $data = array(
             'collections'   =>  $this->search_model->getCollections(),
-            'collectionInfo'    =>  $this->search_model->countAllRecords(),
-            'recordCount'   => $this->search_model->countaAllRecords()
+            'collectionInfo'    =>  $this->search_model->getCollInfo(),
+            'recordCount'   => $this->search_model->countAllRecords()
         );
 
         $this->load->view('template/header', $data);

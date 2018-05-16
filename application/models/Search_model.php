@@ -3,23 +3,15 @@
 class Search_model extends CI_Model {
 
     // count all records in database
-    public function countaAllRecords() {
+    public function countAllRecords() {
         $this->db->select('ROUND(count(*), -2) as count');
         $this->db->from('records');
         $query = $this->db->get();
         return $query->row();
     }
     
-    public function allCollRecords() {
-        $this->db->select('*');
-        $this->db->from('collections');
-        $query = $this->db->get();
-        if ($query->num_rows() > 0) {
-            return $query->result_array();
-        }
-    }
-    
-    public function countAllRecords() {
+    // get all collection details
+    public function getCollInfo() {
         $this->db->select('collections.collection_id, name, collections.url, coll_info, logo, count(coll_id) AS count');
         $this->db->from('collections');
         $this->db->join('records', 'collections.collection_id = records.coll_id', 'left');
@@ -28,50 +20,8 @@ class Search_model extends CI_Model {
         return $query->result_object();
     }
    
-    public function record_count($search_term, $coll_id, $start_year, $end_year) {
-
-        $search_term = $this->session->userdata('search_word');
-        $this->db->select('*');
-        $this->db->from('records');
-        $this->db->join('collections', 'records.coll_id = collections.collection_id', 'inner');
-        if(!empty($coll_id)){
-            $this->db->where('coll_id', $coll_id);
-        }
-        if(!empty($start_year) && empty($end_year)){
-            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
-        }
-        if(!empty($end_year) && empty($start_year)){
-            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
-        }
-        if(!empty($start_year) && !empty($end_year)){
-            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
-            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
-        }
-        $this->db->group_start() 
-        ->or_like('marc_100_main_pers_name', $search_term)
-        ->or_like('marc_260c_pub_year', $search_term)
-        ->or_like('marc_110_main_corp_name', $search_term)
-        ->or_like('marc_700_add_pers_name', $search_term)
-        ->or_like('marc_710_add_corp_name', $search_term)
-        ->or_like('marc_600_subj_add_pers_name', $search_term)
-        ->or_like('marc_610_subj_add_corp_name', $search_term)
-        ->or_like('marc_130_main_uniform_title', $search_term)
-        ->or_like('marc_240_uniform_title', $search_term)
-        ->or_like('marc_242_trans_title', $search_term)
-        ->or_like('marc_243_coll_uniform_title', $search_term)
-        ->or_like('marc_246_var_form_title', $search_term)
-        ->or_like('marc_730_add_uniform_title', $search_term)
-        ->or_like('marc_740_add_related_title', $search_term)
-        ->or_like('marc_250_edition_stmt', $search_term)
-        ->or_like('marc_260_pub', $search_term)
-        ->or_like('marc_264_rda_pub', $search_term)
-        ->group_end(); 
-        $this->db->where('MATCH (marc_099_coll_ident) AGAINST ("'. $search_term .'")', NULL, FALSE);
-        $this->db->or_where('MATCH (marc_245_title_stmt) AGAINST ("'. $search_term .'")', NULL, FALSE);
-        $query = $this->db->get();
-        return $query->num_rows();
-    }
-    
+   
+    // get records based on search input
     public function fetch_records($limit, $start, $search_term, $coll_id, $start_year, $end_year) {
 
         $search_term = $this->session->userdata('search_word');
@@ -92,34 +42,48 @@ class Search_model extends CI_Model {
             $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
             $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
         }
-        $this->db->group_start() 
-        ->or_like('marc_100_main_pers_name', $search_term)
-        ->or_like('marc_260c_pub_year', $search_term)
-        ->or_like('marc_110_main_corp_name', $search_term)
-        ->or_like('marc_700_add_pers_name', $search_term)
-        ->or_like('marc_710_add_corp_name', $search_term)
-        ->or_like('marc_600_subj_add_pers_name', $search_term)
-        ->or_like('marc_610_subj_add_corp_name', $search_term)
-        ->or_like('marc_130_main_uniform_title', $search_term)
-        ->or_like('marc_240_uniform_title', $search_term)
-        ->or_like('marc_242_trans_title', $search_term)
-        ->or_like('marc_243_coll_uniform_title', $search_term)
-        ->or_like('marc_246_var_form_title', $search_term)
-        ->or_like('marc_730_add_uniform_title', $search_term)
-        ->or_like('marc_740_add_related_title', $search_term)
-        ->or_like('marc_250_edition_stmt', $search_term)
-        ->or_like('marc_260_pub', $search_term)
-        ->or_like('marc_264_rda_pub', $search_term)
-        ->group_end();
-        $this->db->where('MATCH (marc_099_coll_ident) AGAINST ("'. $search_term .'")', NULL, FALSE);
-        $this->db->or_where('MATCH (marc_245_title_stmt) AGAINST ("'. $search_term .'")', NULL, FALSE);
-
+        if(!empty($search_term)){
+            $this->db->group_start() 
+            ->where('MATCH (marc_099_coll_ident) AGAINST ("'. $search_term .'")', NULL, FALSE)
+            ->or_where('MATCH (marc_245_title_stmt) AGAINST ("'. $search_term .'")', NULL, FALSE)
+            ->group_end();
+        }
         $this->db->limit($limit, $start);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
         return false;
+    }
+
+    // count number of records based on search input
+    public function record_count($search_term, $coll_id, $start_year, $end_year) {
+
+        $search_term = $this->session->userdata('search_word');
+        $this->db->select('*');
+        $this->db->from('records');
+        $this->db->join('collections', 'records.coll_id = collections.collection_id', 'inner');
+        if(!empty($coll_id)){
+            $this->db->where('coll_id', $coll_id);
+        }
+        if(!empty($start_year) && empty($end_year)){
+            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
+        }
+        if(!empty($end_year) && empty($start_year)){
+            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
+        }
+        if(!empty($start_year) && !empty($end_year)){
+            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
+        }
+        if(!empty($search_term)){
+            $this->db->group_start() 
+            ->where('MATCH (marc_099_coll_ident) AGAINST ("'. $search_term .'")', NULL, FALSE)
+            ->or_where('MATCH (marc_245_title_stmt) AGAINST ("'. $search_term .'")', NULL, FALSE)
+            ->group_end();
+        }
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 
     // get collection info by collection url
@@ -169,68 +133,6 @@ class Search_model extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
-
-    public function get_results($search_term) {
-        // the $search_term is sent by the controller
-        $this->db->from('records');
-        $this->db->join('collections', 'records.coll_id = collections.collection_id', 'inner');
-        $this->db->like('marc_099_coll_ident', $search_term)
-        ->or_like('marc_100_main_pers_name', $search_term)
-        ->or_like('marc_260c_pub_year', $search_term)
-        ->or_like('marc_110_main_corp_name', $search_term)
-        ->or_like('marc_700_add_pers_name', $search_term)
-        ->or_like('marc_710_add_corp_name', $search_term)
-        ->or_like('marc_600_subj_add_pers_name', $search_term)
-        ->or_like('marc_610_subj_add_corp_name', $search_term)
-        ->or_like('marc_245_title_stmt', $search_term)
-        ->or_like('marc_130_main_uniform_title', $search_term)
-        ->or_like('marc_240_uniform_title', $search_term)
-        ->or_like('marc_242_trans_title', $search_term)
-        ->or_like('marc_243_coll_uniform_title', $search_term)
-        ->or_like('marc_246_var_form_title', $search_term)
-        ->or_like('marc_730_add_uniform_title', $search_term)
-        ->or_like('marc_740_add_related_title', $search_term)
-        ->or_like('marc_250_edition_stmt', $search_term)
-        ->or_like('marc_260_pub', $search_term)
-        ->or_like('marc_264_rda_pub', $search_term);
-
-        $this->db->limit(100, $this->uri->segment(3));
-        $query = $this->db->get();
-        return $query->result_array();
-    }
-
-    public function item_list_count($search_term) {
-        $this->db->select('*');
-        $this->db->from('records');
-        $this->db->like('marc_099_coll_ident', $search_term)
-        ->or_like('marc_100_main_pers_name', $search_term)
-        ->or_like('marc_260c_pub_year', $search_term)
-        ->or_like('marc_110_main_corp_name', $search_term)
-        ->or_like('marc_700_add_pers_name', $search_term)
-        ->or_like('marc_710_add_corp_name', $search_term)
-        ->or_like('marc_600_subj_add_pers_name', $search_term)
-        ->or_like('marc_610_subj_add_corp_name', $search_term)
-        ->or_like('marc_245_title_stmt', $search_term)
-        ->or_like('marc_130_main_uniform_title', $search_term)
-        ->or_like('marc_240_uniform_title', $search_term)
-        ->or_like('marc_242_trans_title', $search_term)
-        ->or_like('marc_243_coll_uniform_title', $search_term)
-        ->or_like('marc_246_var_form_title', $search_term)
-        ->or_like('marc_730_add_uniform_title', $search_term)
-        ->or_like('marc_740_add_related_title', $search_term)
-        ->or_like('marc_250_edition_stmt', $search_term)
-        ->or_like('marc_260_pub', $search_term)
-        ->or_like('marc_264_rda_pub', $search_term);
-        $query = $this->db->get();
-        return $query->num_rows();
-    }
-
-    public function item_view_details($item_id) {
-        $this->db->select('*');
-        $this->db->from('records');
-                $this->db->where('record_id', $item_id); // Produces: WHERE id = 'whatever is in $item_id' ($item_is set in the URL like /?item_id=86)
-                return $this->db->get()->row();
-            }
 
         }
 
