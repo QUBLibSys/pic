@@ -1,5 +1,9 @@
 /* custom css rules */
 
+a{
+	color: #004d7e!important;
+}
+
 body {
 	padding-top: 5rem;
 	font-family: 'Roboto', sans-serif;
