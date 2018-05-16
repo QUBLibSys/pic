@@ -21,10 +21,36 @@
 	-webkit-align-items: center;
 	align-items: center;
 }
+
+a {
+	color: #004d7e;
+}
+
+.btn-primary{
+	background-color: #004d7e;
+	border: none;
+}
+
+.btn-primary:hover{
+	background-color: #004d7e;
+
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+	background-color: #004d7e;
+	border: none;
+}
+
+.input-group-text{
+	background-color:#004D7E;
+	color: white;
+
+}
+
 </style>
 
 <main role="main">
-	<section class="jumbotron text-center">
+	<section class="jumbotron text-center" aria-label="Primary">
 		<div class="container">
 			<h1 class="display-4">Personal and Institutional Collections</h1>
 			<p class="lead">Welcome to a catalogue of some of the discrete library collections held in <a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections"> Special Collections</a> at Queen's University Belfast. Eighteenth century publishing dominates the contents of these libraries, but earlier and later material is also found.</p> 
@@ -34,17 +60,17 @@
 </main>
 
 <div class="container">
-	<div class="row">
-		<div class="col-md-12 mb-3">
+	<div class="row justify-content-center">
+		<div class="col-md-8 mb-3">
 			<?php 
 			$data = array(
 				'method'	=>	'get'
 			);
 			echo form_open('search/results/', $data); 
 			?>
-			<div class="input-group mb-3">
+			<div class="input-group mb-4">
 				<div class="input-group-prepend">
-					<a href="#" class="btn btn-outline-primary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter by Collection</a>
+					<a href="#" class="btn btn-primary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter by Collection</a>
 					<div class="dropdown-menu">
 						<?php foreach ($collections as $coll): ?>
 							<a href="#" class="dropdown-item" value="<?php echo $coll->collection_id ?>"><?php echo $coll->name ?></a>
@@ -52,15 +78,15 @@
 						<a href="#" class="dropdown-item" value="All">All Collections</a>
 					</div>
 				</div>
-				<input type="text" name="q" class="form-control" placeholder="search term">
+				<input type="text" name="q" class="form-control" placeholder="search term" aria-label="Select collection from left and enter search query">
 				<input type="hidden" name="coll_id" class="form-control">
 			</div> <!-- end input group -->
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="">Filter by Year</span>
 				</div>
-				<input type="text" name="start_year" class="form-control" placeholder="start year" maxlength="4">
-				<input type="text" name="end_year" class="form-control" placeholder="end year" maxlength="4">
+				<input type="text" name="start_year" class="form-control" placeholder="start year" maxlength="4" aria-label="Enter start year">
+				<input type="text" name="end_year" class="form-control" placeholder="end year" maxlength="4" aria-label="Enter end year">
 			</div>
 			<br>
 			<input class="btn btn-primary" type="submit" name="submit">
@@ -88,12 +114,12 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12">
 								<div class="card" id="<?php echo $collection->name?>">
-										<img src="<?php echo base_url().$collection->logo ?>" class="img-thumbnail">
+										<img src="<?php echo base_url().$collection->logo ?>" class="img-thumbnail" alt="collection keeper image">
 									<div class="card-content text-center">
 										<h5><?php echo $collection->name ?> Collection</h5>
 									</div>
 									<div class="card-footer">
-									<a class="btn btn-sm btn-outline-primary" href="<?php echo base_url().'collection/'.$collection->url ?>" role="button">Search & Discover</a>
+									<a class="btn btn-sm btn-primary" href="<?php echo base_url().'collection/'.$collection->url ?>" role="button">Search & Discover</a>
    									</div>
 								</div>
 							</div>

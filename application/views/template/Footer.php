@@ -1,8 +1,20 @@
 <!-- close container  -->
 </div> <!-- /container -->
 
-<footer>
-    <div class="mt-5 pb-5 pt-5 bg-dark">
+<footer class="pic-footer">
+    <style>.pic-footer{background-color: #004D7E;}
+    footer{
+        #footer {
+  position: relative;
+  margin-top: -180px;
+  /* negative value of footer height */
+  height: 180px;
+  clear: both;
+  background-color: red;
+}
+    }
+    </style>
+    <div class="mt-5 pb-5 pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -20,7 +32,7 @@
                 </div>
                 <div class="col-md-3">
                     <h3>Location</h3>
-                    <img src="<?php echo base_url('assets\img\location.png'); ?>" />
+                    <img src="<?php echo base_url('assets\img\location.png'); ?>" alt="queens location">
                 </div>
                 <div class="col-md-3">
                     <h3>Links</h3>
@@ -29,7 +41,7 @@
                         <li><a href="http://www.rascal.ac.uk/ ">RASCAL</a></li>
                         <li><a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections/BooksandJournals/">Books and Journals</a></li>
                     </ul>
-                    <hr><p class="text-muted"> &copy; <?php echo date("Y"); ?> Queen's University Belfast</p>
+                    <hr><p class="text"> &copy; <?php echo date("Y"); ?> Queen's University Belfast</p>
                 </div>
                 <div class="col-md-3">
                     <style>
