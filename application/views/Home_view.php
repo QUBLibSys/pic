@@ -1,53 +1,5 @@
 <!-- swiper style -->
-<style>
-.swiper-container {
-	width: 100%;
-	height: 100%;
-}
-.swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	/* Center slide text vertically */
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-}
 
-a {
-	color: #004d7e;
-}
-
-.btn-primary{
-	background-color: #004d7e;
-	border: none;
-}
-
-.btn-primary:hover{
-	background-color: #004d7e;
-
-}
-
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
-	background-color: #004d7e;
-	border: none;
-}
-
-.input-group-text{
-	background-color:#004D7E;
-	color: white;
-
-}
-
-</style>
 
 <!-- <main role="main"> -->
 	<section class="jumbotron text-center" aria-label="Page description">
@@ -137,7 +89,7 @@ a {
   	</div> <!-- end swiper container -->
 </div>
 
-<div class="container">
+<!-- <div class="container">
 	<div class="row">
 		<div class="col-md-12 text-center">
 			<hr>
@@ -145,7 +97,7 @@ a {
 			<p><a href="mailto:specialcollections@qub.ac.uk">specialcollections@qub.ac.uk</a></p>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <!-- Initialize Swiper -->
 <script>
