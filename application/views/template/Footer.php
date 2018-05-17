@@ -1,7 +1,8 @@
 <!-- close container  -->
 </div> <!-- /container -->
 
-<footer class="pic-footer">
+
+<footer class="pic-footer" role="contentinfo">
     <style>.pic-footer{background-color: #004D7E;}
     footer{
         #footer {
@@ -18,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h3>Contact</h3>
+                    <p style="font-size:2rem">Contact</p>
                     <address>
                         Special Collections <br>
                         The McClay Library <br>
@@ -31,11 +32,11 @@
 
                 </div>
                 <div class="col-md-3">
-                    <h3>Location</h3>
+                    <p style="font-size:2rem">Location</p>
                     <img src="<?php echo base_url('assets\img\location.png'); ?>" alt="queens location">
                 </div>
                 <div class="col-md-3">
-                    <h3>Links</h3>
+                    <p style="font-size:2rem">Links</p>
                     <ul class="list-unstyled text-small">
                         <li><a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections/Manuscripts/">Manuscripts</a></li>
                         <li><a href="http://www.rascal.ac.uk/ ">RASCAL</a></li>
@@ -47,16 +48,17 @@
                     <style>
 
                 </style>
-                <h3>Social</h3>
+                <p style="font-size:2rem">Social</p>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com" class="fa fa-2x fa-facebook"></a>
-                    <a href="https://www.twitter.com" class="fa fa-2x fa-twitter"></a>
-                    <a href="https://www.instagram.com" class="fa fa-2x fa-instagram"></a>
-                    <a href="https://www.youtube.com" class="fa fa-2x fa-envelope"></a>
+                    <a href="https://www.facebook.com" class="fa fa-2x fa-facebook" aria-label="Our Facebook Page"></a>
+                    <a href="https://www.twitter.com" class="fa fa-2x fa-twitter" aria-label="Our Twitter Page"></a>
+                    <a href="https://www.instagram.com" class="fa fa-2x fa-instagram" aria-label="Our Insta Page"></a>
+                    <a href="https://www.youtube.com" class="fa fa-2x fa-envelope" aria-label="Our Email Link"></a>
                 </div>
             </div>
         </div>
     </div>
-</footer>
+
 </body>
+</footer>
 </html>
