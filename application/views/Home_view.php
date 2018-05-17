@@ -49,15 +49,15 @@ a {
 
 </style>
 
-<main role="main">
-	<section class="jumbotron text-center" aria-label="Primary">
+<!-- <main role="main"> -->
+	<section class="jumbotron text-center" aria-label="Page description">
 		<div class="container">
 			<h1 class="display-4">Personal and Institutional Collections</h1>
 			<p class="lead">Welcome to a catalogue of some of the discrete library collections held in <a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections"> Special Collections</a> at Queen's University Belfast. Eighteenth century publishing dominates the contents of these libraries, but earlier and later material is also found.</p> 
 			<p class="lead"> We have approximatley <a href="<?php echo base_url() ?>/search"> <?php echo $recordCount->count ?> records </a> in our collection.</p>
 		</div>
 	</section>
-</main>
+<!-- </main> -->
 
 <div class="container">
 	<div class="row justify-content-center">
@@ -96,6 +96,7 @@ a {
 	</div>
 </div>
 
+<div 
 <div class="container-fluid collection-slider">
   	<div class="swiper-container" href="<?php echo base_url() ?>collmain">
   		<div class="swiper-wrapper">
@@ -116,10 +117,10 @@ a {
 								<div class="card" id="<?php echo $collection->name?>">
 										<img src="<?php echo base_url().$collection->logo ?>" class="img-thumbnail" alt="collection keeper image">
 									<div class="card-content text-center">
-										<h5><?php echo $collection->name ?> Collection</h5>
+										<p style="font-size:1.5rem"><?php echo $collection->name ?> Collection</p>
 									</div>
 									<div class="card-footer">
-									<a class="btn btn-sm btn-primary" href="<?php echo base_url().'collection/'.$collection->url ?>" role="button">Search & Discover</a>
+									<a class="btn btn-sm btn-primary" href="<?php echo base_url().'collection/'.$collection->url ?>">Search & Discover</a>
    									</div>
 								</div>
 							</div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head role="banner">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,7 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<!-- google tracking code -->
 
 </head>
-<body>
+<body role="main">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCSQ79T"
@@ -88,7 +88,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Collections</a>
 					<div class="dropdown-menu">
-						<!-- populate the dropdown from database rtather than code inline -->
+						<!-- populate the dropdown from database rather than code inline -->
 						<?php foreach ($collections as $collection): ?>
 							<a href="<?php echo base_url(); ?>collection/<?php echo $collection->url ?>" class="dropdown-item collection-menu" value="<?php echo $collection->collection_id ?>"><?php echo $collection->name ?></a>
 						<?php endforeach; ?>
