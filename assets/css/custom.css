@@ -1,9 +1,76 @@
 /* custom css rules */
 
+
 body {
 	padding-top: 5rem;
 	font-family: 'Roboto', sans-serif;
 }
+
+
+
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.jumbotron a {
+	color: #004d7e;
+}
+
+.btn-primary{
+	background-color: #004d7e;
+	border: none;
+}
+
+.btn-primary:hover{
+	background-color: #004d7e;
+
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+	background-color: #004d7e;
+	border: none;
+}
+
+.input-group-text{
+	background-color:#004D7E;
+	color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -13,11 +80,6 @@ body {
 	background-color: #004D7E;
 }
 
-/* 'view more' button on homepage just below intorduction */
-.view-more-btn{
-  background-color: #d63107;
-  border: none;
-}
 
 /* Text Colour for heading on all records */
 #all-header {
@@ -40,10 +102,6 @@ body {
 	color: white;
 }
 
-/*Button on homepage*/
-.learn-more-btn {
-	background-color: #d63107;
-}
 
 /*Colour of text on homescreen pil description*/
 .homeBanner {
@@ -83,16 +141,6 @@ body {
 	border-radius: 0px; 
 }
 
-#pil-nav-bar {
-	background-color: #d63107!important;
-	font-family: Arial, Helvetica, sans-serif;
-	font-style: normal;
-	font-size: 17px;
-}
-#pil-nav-bar img {
-	width: 150px;
-	display: block;
-}
 
 /*Search Button on navbar*/
 
@@ -107,13 +155,7 @@ body {
 }
 /*Pagination*/
 
-.page-item.active .page-link {
-	background-color: #d63107;
-	border: none;
-}
-.page-link a {
-	color: black;
-}
+
 .pagination {
 	padding: 50px;
 }
@@ -247,8 +289,17 @@ body {
 
 /*START FOOTER STYLING*/
 .pic-footer{
-	color: #004D7E!important;
+	color: white;
 	background: #004D7E!important;
+}
+
+.pic-footer a{
+	color: white;
+}
+
+.pic-footer a:hover{
+	color: rgb(201, 201, 201);
+	text-decoration: none;
 }
 
   /*When hovering over links, remove underlines and change colour*/
