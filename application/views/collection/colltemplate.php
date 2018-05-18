@@ -1,10 +1,10 @@
-<main role="main">
+
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-4 title-blue"><?php echo $items->name ?> Collection</h1>
 			<p class="lead"><?php echo $items->coll_info ?></p>
 			<blockquote class="blockquote">
-  					<footer class="blockquote-footer">Collected by <cite title="Source Title"><?php echo $items->collected_by ?></cite></footer>
+  					<div class="blockquote-footer">Collected by <cite title="Source Title"><?php echo $items->collected_by ?></cite></div>
 			</blockquote>
 		</div>
 	</div>
@@ -12,7 +12,7 @@
 		<img src="<?php echo base_url().$items->logo ?>" class="rounded mx-auto d-block img-thumbnail mb-3" alt="<?php echo $items->coll_name ?>" title="<?php echo $items->coll_name ?>">
 		<a class="btn btn-sm btn-dark" href="<?php echo base_url() ?>search/results/?coll_id=<?php echo $items->collection_id ?>" role="button">View All Records <span class="badge badge-light"><?php echo $collectionCount->count ?></span></a>
 	</div>
-</main>
+
 
 	<div class="container">
 		<div class="row">
