@@ -14,6 +14,9 @@
 
 	<title>Personal and Institutional Collections</title>
 
+	<!-- Sharethis code, for social media sharing on accordians -->
+	<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5afebee44919d90011178487&product=social-ab' async='async'></script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
