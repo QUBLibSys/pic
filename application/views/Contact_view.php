@@ -1,11 +1,11 @@
-<main role="main">
+
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-4 title-blue"><?php echo $title ?></h1>
 			<p class="lead"><?php echo $subtitle ?></p>
 		</div>
 	</div>
-</main>
+
 
 
 <section>

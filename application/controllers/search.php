@@ -20,7 +20,7 @@ class Search extends CI_Controller{
     public function results() {
 
       if($this->input->ip_address('143.117.194.36')) {
-        $this->output->enable_profiler(TRUE);  
+        // $this->output->enable_profiler(TRUE);  
       }
       
         //  if q is empty set search_term to NULL, else set it to value of q

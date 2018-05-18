@@ -50,10 +50,9 @@
                 </style>
                 <p style="font-size:2rem">Social</p>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com" class="fa fa-2x fa-facebook" aria-label="Our Facebook Page"></a>
-                    <a href="https://www.twitter.com" class="fa fa-2x fa-twitter" aria-label="Our Twitter Page"></a>
-                    <a href="https://www.instagram.com" class="fa fa-2x fa-instagram" aria-label="Our Insta Page"></a>
-                    <a href="https://www.youtube.com" class="fa fa-2x fa-envelope" aria-label="Our Email Link"></a>
+                    <a href="https://www.facebook.com" class="fab fa-2x fa-facebook-f" aria-label="Our Facebook Page"></a>
+                    <a href="https://www.twitter.com" class="fab fa-2x fa-twitter" aria-label="Our Twitter Page"></a>
+                    <a href="https://www.instagram.com" class="fab fa-2x fa-instagram" aria-label="Our Insta Page"></a>
                 </div>
             </div>
         </div>

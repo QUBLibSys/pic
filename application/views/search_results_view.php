@@ -39,7 +39,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
 ?>
 
-<main role="main">
+
   <div class="jumbotron">
     <div class="container">
       <h1 class="display-4 title-blue">Search Results</h1>
@@ -47,7 +47,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
     <p class="text-muted"><em>Search Terms: <?php echo $comma_separated_search_terms; ?></em></p>
     </div>
   </div>
-</main>
+
 
 <div class="container">
   <div class="row">
@@ -60,7 +60,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
       ?>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <a href="#" class="btn btn-outline-primary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="btn btn-primary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <?php echo $coll_id;?></a>
           <div class="dropdown-menu">
             <?php foreach ($collections as $coll): ?>
@@ -68,15 +68,15 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
             <?php endforeach; ?>
           </div>
         </div>
-        <input type="text" name="q" class="form-control" value="<?php echo $this->input->get('q') ?>" placeholder="search term">
+        <input type="text" name="q" class="form-control" value="<?php echo $this->input->get('q') ?>" placeholder="search term" aria-label="Select collection from left and enter search query">
         <input type="hidden" name="coll_id" class="form-control" value="<?php echo $this->input->get('coll_id') ?>">
       </div> <!-- end input group -->
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="">Filter by Year</span>
         </div>
-        <input type="text" name="start_year" class="form-control" value="<?php echo $this->input->get('start_year') ?>" placeholder="start year" maxlength="4">
-        <input type="text" name="end_year" class="form-control" value="<?php echo $this->input->get('end_year') ?>" placeholder="end year" maxlength="4">
+        <input type="text" name="start_year" class="form-control" value="<?php echo $this->input->get('start_year') ?>" placeholder="start year" maxlength="4" aria-label="Enter start year">
+        <input type="text" name="end_year" class="form-control" value="<?php echo $this->input->get('end_year') ?>" placeholder="end year" maxlength="4" aria-label="Enter end year">
       </div>
       <br>
       <input class="btn btn-primary" type="submit" name="submit">
@@ -89,32 +89,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 <?php if($results): ?>
 
 <div class="container">
-<style>
-.fa {
-  padding: 5px;
-  font-size: 20px;
-  width: 20px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-}
 
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-</style>
 <div class="row">
 <div class="col-md-12">
   <div id="accordion" role="tablist">
@@ -126,92 +101,91 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
       <div class="card list-view-brand">
         <div class="card-header" role="tab">
-          <h5>
+          <p style="font-size:1rem">
             <a data-toggle="collapse" id="#<?php echo $result['record_id'] ?>" href="#<?php echo $result['record_id'] ?>" aria-expanded="false" aria-controls="<?php echo $result['record_id'] ?>" class="collapsed">
               <?php echo $result['marc_099_coll_ident']?> | <strong><?php echo mb_strimwidth($result['marc_245_title_stmt'], 0, 100, "...")?></strong>
             </a>
-          </h5>
+          </p>
           <div class="item-tags">
             <span class="badge tag-outline"><?php echo $result['name'] ?></span>
           </div>
         </div>
 
-        <div id="<?php echo $result['record_id'] ?>" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" style="">
+        <div id="<?php echo $result['record_id'] ?>" class="collapse" role="tabpanel" data-parent="#accordion" style="">
           <div class="card-body">
             <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">ID</small>
-                <h6 class="my-0"><?php echo $result['record_id'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['record_id'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Title</small>
-                <h6 class="my-0"><?php echo $result['marc_245_title_stmt'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_245_title_stmt'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Language</small>
-                <h6 class="my-0"><?php echo $result['marc_008_lang'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_008_lang'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Multi Language</small>
-                <h6 class="my-0"><?php echo $result['marc_041_multi_lang'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_041_multi_lang'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Main Author</small>
-                <h6 class="my-0"><?php echo $result['marc_100_main_pers_name'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_100_main_pers_name'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Publication Year</small>
-                <h6 class="my-0"><?php echo $result['marc_260c_pub_year'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_260c_pub_year'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Additional Persons</small>
-                <h6 class="my-0"><?php echo $result['marc_700_add_pers_name'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_700_add_pers_name'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Owner</small>
-                <h6 class="my-0"><?php echo $result['marc_110_main_corp_name'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_110_main_corp_name'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Additional Owner</small>
-                <h6 class="my-0"><?php echo $result['marc_710_add_corp_name'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_710_add_corp_name'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Uniform Titles</small>
-                <h6 class="my-0"><?php echo $result['marc_243_coll_uniform_title'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_243_coll_uniform_title'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Location of Publishers</small>
-                <h6 class="my-0"><?php echo $result['marc_260_pub'];?></h6>
+                <p style="font-size:1rem" class="my-0"><?php echo $result['marc_260_pub'];?></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <small class="text-muted">Encore URL</small>
-                <h6 class="my-0"><a href="<?php echo $result['encore_url'] ?>" class="text-primary"><?php echo $result['encore_url'] ?></a></h6>
+                <p style="font-size:1rem" class="my-0"><a href="<?php echo $result['encore_url'] ?>" class="text-primary"><?php echo $result['encore_url'] ?></a></p>
               </div>
             </li>
-
           </ul>         
           </div>
         </div>
