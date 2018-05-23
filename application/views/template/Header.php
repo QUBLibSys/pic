@@ -14,7 +14,7 @@
 
 	<title>Personal and Institutional Collections</title>
 
-	<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5afebee44919d90011178487&product=social-ab' async='async'></script>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5afebee44919d90011178487&product=social-ab' async='async'></script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

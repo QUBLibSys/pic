@@ -115,22 +115,22 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
           <div class="card-body">
             <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
-
+            <div>
                 <small class="text-muted">ID</small>
                 <p class="my-0"><?php echo $result['record_id'];?></p>
-
+            </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
-
+            <div>
                 <small class="text-muted">Title</small>
                 <p class="my-0"><?php echo $result['marc_245_title_stmt'];?></p>
-
+            </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
-
+            <div>
                 <small class="text-muted">Language</small>
                 <p class="my-0"><?php echo $result['marc_008_lang'];?></p>
-
+            </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
