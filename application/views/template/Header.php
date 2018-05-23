@@ -14,7 +14,6 @@
 
 	<title>Personal and Institutional Collections</title>
 
-	<!-- Sharethis code, for social media sharing on accordians -->
 	<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5afebee44919d90011178487&product=social-ab' async='async'></script>
 
 <!-- Google Tag Manager -->
@@ -82,7 +81,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-blue">
-		<a class="navbar-brand" href="<?php echo base_url() ?>"><strong>PIC</strong></a>
+		<a class="navbar-brand" href="<?php echo base_url() ?>" title="PIC Home"><strong>PIC</strong></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -90,7 +89,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Collections</a>
+					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Find a collection">Collections</a>
 					<div class="dropdown-menu">
 						<!-- populate the dropdown from database rather than code inline -->
 						<?php foreach ($collections as $collection): ?>
@@ -99,13 +98,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections">Special Collections</a>
+					<a class="nav-link" href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections" title="External Special Collections Site">Special Collections</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?php echo base_url('contact') ?>">Contact</a>
+					<a class="nav-link" href="<?php echo base_url('contact') ?>" title="Contact form">Contact</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?php echo base_url().'about' ?>">About</a>
+					<a class="nav-link" href="<?php echo base_url().'about' ?>" title="About PIC">About</a>
 				</li>
 			</ul>
 

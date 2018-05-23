@@ -10,7 +10,7 @@
 	</div>
 	<div class="text-center">
 		<img src="<?php echo base_url().$items->logo ?>" class="rounded mx-auto d-block img-thumbnail mb-3" alt="<?php echo $items->coll_name ?>" title="<?php echo $items->coll_name ?>">
-		<a class="btn btn-sm btn-dark" href="<?php echo base_url() ?>search/results/?coll_id=<?php echo $items->collection_id ?>" role="button">View All Records <span class="badge badge-light"><?php echo $collectionCount->count ?></span></a>
+		<a class="btn btn-sm btn-dark" href="<?php echo base_url() ?>search/results/?coll_id=<?php echo $items->collection_id ?>" role="button" title="List of all records">View All Records <span class="badge badge-light"><?php echo $collectionCount->count ?></span></a>
 	</div>
 
 

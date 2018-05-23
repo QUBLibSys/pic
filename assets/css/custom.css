@@ -1,6 +1,16 @@
 /* custom css rules */
 
 
+#accordian-title:hover{
+	color: #004d7e;
+}
+
+
+footer background color
+.pic-footer{background-color: #004D7E;}
+
+
+
 body {
 	padding-top: 5rem;
 	font-family: 'Roboto', sans-serif;
