@@ -1,19 +1,13 @@
 /* custom css rules */
 
-
-#accordian-title:hover{
-	color: #004d7e;
+body {
+	padding-top: 3.5rem;
+	font-family: 'Roboto', sans-serif;
 }
 
-
-footer background color
-.pic-footer{background-color: #004D7E;}
-
-
-
-body {
-	padding-top: 5rem;
-	font-family: 'Roboto', sans-serif;
+/* Override Bootstrap color due to contrast conflict  */
+body a {
+	color: #004d7e;
 }
 
 /* Pagination */
@@ -22,81 +16,29 @@ body {
 
 }
 
-/* Accordian Link in search_view for encore */
-.text-primary{
-	color: #004d7e!important;
-}
-
-
-
-
-.swiper-container {
-	width: 100%;
-	height: 100%;
-}
-.swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	/* Center slide text vertically */
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-}
-
-body a {
-	color: #004d7e;
-}
-
+/* Override Bootstrap color due to contrast conflict  */
 .btn-primary{
 	background-color: #004d7e;
 	border: none;
 }
-
+/* Override Bootstrap color due to contrast conflict  */
 .btn-primary:hover{
 	background-color: #004d7e;
 
 }
-
+/* Override Bootstrap color due to contrast conflict  */
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
 	background-color: #004d7e;
 	border: none;
 }
-
+/* Override Bootstrap color due to contrast conflict  */
 .input-group-text{
 	background-color:#004D7E;
 	color: white;
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Title on jumbotron */
 .bg-blue {
 	background-color: #004D7E;
 }
@@ -113,39 +55,26 @@ body a {
 	padding-left: 40px;
 }
 
-/*'Advanced Search' on results page*/
-#advanced_btn {
-	color: rgb(197, 197, 197);
-}
-
-/*Search results page title and results info*/
-#search_result_no {
-	color: white;
-}
 
 
-/*Colour of text on homescreen pil description*/
-.homeBanner {
-	color: white;
-}
-
-/*jumbo colour*/
-.jumbotron {
-	background-color: white;
-}
-
+/* Colour of title on addition pages */
 .title-blue {
 	color: #004D7E;
 }
 
-/*For the banner on all records, keeps text sitting below nav bar*/
-.heading {
-	padding: 3rem 1.5rem;
-	text-align: center;
-}
 
 /* accordion css */
 
+/* Accordian Link in search_view for encore */
+.text-primary{
+	color: #004d7e!important;
+}
+
+/* Create focus */
+#accordian-title:hover{
+	color: #004d7e;
+}
+/* Accordian links */
 #accordion a {
 	color: rgb(80, 80, 80);
 	text-decoration: none;
@@ -153,6 +82,8 @@ body a {
 	font-style: normal;
 	font-size: 16px;
 }
+
+
 .card {
 	padding: 10px;
 	/*font-family: Arial, Helvetica, sans-serif;*/
@@ -160,19 +91,6 @@ body a {
 	font-size: 16px;
 	/*color: rgb(80, 80, 80);*/
 	border-radius: 0px; 
-}
-
-
-/*Search Button on navbar*/
-
-.btn-outline-success {
-	color: white;
-	border-color: white;
-}
-.btn-outline-success:hover {
-	background-color: grey;
-	color: white;
-	border-color: white;
 }
 
 
@@ -208,77 +126,7 @@ body a {
 	background-color: #555;
 	/* Add a dark-grey background on hover */
 }
-/* The Overlay (background) */
 
-.overlay {
-	/* Height & width depends on how you want to reveal the overlay (see JS below) */
-	height: 100%;
-	width: 0;
-	position: fixed;
-	/* Stay in place */
-	z-index: 1;
-	/* Sit on top */
-	left: 0;
-	top: 0;
-	background-color: rgb(0, 0, 0);
-	/* Black fallback color */
-	background-color: rgba(0, 0, 0, 0.9);
-	/* Black w/opacity */
-	overflow-x: hidden;
-	/* Disable horizontal scroll */
-	transition: 0.5s;
-	/* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-}
-/* Position the content inside the overlay */
-
-.overlay-content {
-	position: relative;
-	top: 25%;
-	/* 25% from the top */
-	width: 100%;
-	/* 100% width */
-	text-align: center;
-	/* Centered text/links */
-	margin-top: 30px;
-	/* 30px top margin to avoid conflict with the close button on smaller screens */
-}
-/* The navigation links inside the overlay */
-
-.overlay a {
-	padding: 8px;
-	text-decoration: none;
-	font-size: 36px;
-	color: #818181;
-	display: block;
-	/* Display block instead of inline */
-	transition: 0.3s;
-	/* Transition effects on hover (color) */
-}
-/* When you mouse over the navigation links, change their color */
-
-.overlay a:hover, .overlay a:focus {
-	color: #f1f1f1;
-}
-/* Position the close button (top right corner) */
-
-.overlay .closebtn {
-	position: absolute;
-	top: 20px;
-	right: 45px;
-	font-size: 60px;
-}
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-
-@media screen and (max-height: 450px) {
-	.overlay a {
-		font-size: 20px
-	}
-	.overlay .closebtn {
-		font-size: 40px;
-		top: 15px;
-		right: 35px;
-	}
-}
 
 /* BRAND COLOURS */
 
@@ -288,80 +136,11 @@ body a {
     border-left-width: 10px;
 }
 
-.home-view-brand {
-	background-color: white;
-	border-left-color: #004b87;
-    border-left-width: 10px;
-    border-right-color: #004b87;
-    border-right-width: 10px;
-}
-
-
-/*Link to encore in search results*/
-#encore {
-	color: white;
-}
-
-/*START FOOTER STYLING*/
-.pic-footer{
-	color: white;
-	background: #004D7E!important;
-}
-
-.pic-footer a{
-	color: white;
-}
-
-.pic-footer a:hover{
-	color: rgb(201, 201, 201);
-	text-decoration: none;
-}
-
-  /*When hovering over links, remove underlines and change colour*/
-  /* a:hover{
-	  color: rgb(223, 223, 223);
-	  text-decoration: none;
-  } */
-
-  /* footer a {
-	  color: white;
-  }
-
-  footer h3 {
-	  color: white;
-  }
-
-  footer p {
-	  color: white;
-  }
-
-  address {
-  	color: white;
-  } */
-
-/* Social Media icons */
-
-.social-icons a {
-	    letter-spacing: 0.5em;
-}
-
+/* Padding above and below accordian list */
  #accordion {
   padding: 1rem 0 0 0;
 }
 
-.collection-menu {
-	border-left-width: 15px;
-    border-top: none;
-    border-bottom: none;
-    border-right: none;
-}
-
-.collection-img {
-    width: 8em;
-    height: 100%;
-    position: inherit;
-    padding: 0em 0 1em 0;
-}
 
 /*highlight words on search results page*/
 .highlight {
@@ -415,4 +194,61 @@ body a {
 
 .swiper-scrollbar-drag {
     background: rgb(0, 77, 125) !important;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+
+
+/*START FOOTER STYLING*/
+.pic-footer{
+	color: white;
+	background: #004D7E!important;
+}
+
+.pic-footer a{
+	color: white;
+}
+
+.pic-footer a:hover{
+	color: rgb(201, 201, 201);
+	text-decoration: none;
+}
+
+/* Social Media icons in footer*/
+.social-icons a {
+	    letter-spacing: 0.5em;
+}
+
+/* END FOOTER STYLING */
+
+@media screen and (max-height: 450px) {
+	.overlay a {
+		font-size: 20px
+	}
+	.overlay .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	}
 }

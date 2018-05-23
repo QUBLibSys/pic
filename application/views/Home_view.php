@@ -4,7 +4,7 @@
 <!-- <main role="main"> -->
 	<section class="jumbotron text-center" aria-label="Page description">
 		<div class="container">
-			<h1 class="display-4">Personal and Institutional Collections</h1>
+			<h1 class="display-4 title-blue">Personal and Institutional Collections</h1>
 			<p class="lead">Welcome to a catalogue of some of the discrete library collections held in <a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections"> Special Collections</a> at Queen's University Belfast. Eighteenth century publishing dominates the contents of these libraries, but earlier and later material is also found.</p> 
 			<p class="lead"> We have approximately <a href="<?php echo base_url() ?>/search"> <?php echo $recordCount->count ?> records </a> in our collection.</p>
 		</div>
