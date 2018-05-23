@@ -20,7 +20,7 @@
 			<div class="input-group mb-3">
 
 				<div class="input-group-prepend">
-					<a href="#" class="btn btn-primary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter by Collection</a>
+					<a href="#" class="btn btn-primary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
 
 					<div class="dropdown-menu">
 						<?php foreach ($collections as $coll): ?>
