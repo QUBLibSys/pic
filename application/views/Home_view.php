@@ -48,7 +48,7 @@
 	</div>
 </div>
 
-<div 
+
 <div class="container-fluid collection-slider">
   	<div class="swiper-container" href="<?php echo base_url() ?>collmain">
   		<div class="swiper-wrapper">

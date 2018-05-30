@@ -10,41 +10,56 @@
 
 <section>
 	<div class="container">
-		<form class="needs-validation" id="contactForm" novalidate>
+		<?php echo $this->session->flashdata('email_sent'); echo $this->session->flashdata('email_not_sent'); ?>
+		<form class="needs-validation" id="contactForm" novalidate action="<?php echo base_url()?>email" method="post">
 			<div class="form-row">
 				<div class="col-md-4 mb-3">
 					<label for="name">Name</label>
-					<input type="text" class="form-control" id="name" placeholder="Name" value="" required>
+					<input type="text" class="form-control" name="name" placeholder="Name" value="" required>
 					<div class="valid-feedback">
-						Looks good!
+						Good!
 					</div>
 					<div class="invalid-feedback">
-						Please provide a name.
+						Error! Please provide a name.
 					</div>
 				</div>
 				<div class="col-md-4 mb-3">
 					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" placeholder="Email" value="" required>
+					<input type="email" class="form-control" name="email" placeholder="Email" value="" required>
 					<div class="valid-feedback">
-						Looks good!
+						Good!
 					</div>
 					<div class="invalid-feedback">
-						Please provide an email.
+						Error! Please provide a valid email
 					</div>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="col-md-6 mb-3">
 					<label for="comment">Comment</label>
-					<textarea class="form-control" id="comment" placeholder="Comment" rows="3" required></textarea>
+					<textarea class="form-control" name="comment" placeholder="Comment" rows="3" required></textarea>
 					<div class="valid-feedback">
-						Looks good!
+						Good!
 					</div>
 					<div class="invalid-feedback">
-						Please provide a comment.
+						Error! Provide a comment
 					</div>
 				</div>
 			</div>
+			<!-- Google recaptcha widget -->
+			<div class="g-recaptcha mb-2" data-sitekey="6LcbE1cUAAAAAIJRvyrnxty1X-rxcJ7VeY6ZRqeE"></div>
+			<script>
+			window.onload = function() {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+};
+</script>
+
+
+
 			<div class="form-group">
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -58,7 +73,6 @@
 			</div>
 			<button class="btn btn-primary" type="submit">Submit</button>
 		</form>
-
 		<script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
