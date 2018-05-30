@@ -6,6 +6,5 @@ create strong password for database user
 change $config['base_url'] in config.php
 add meta data content to header
 add a favicon
-add collections to home page
-add random item to home page
-remove /index from pagination
+import MARC 773 field from sierra db
+only the first 090 field is being selected by sierra pgsql query, need both
