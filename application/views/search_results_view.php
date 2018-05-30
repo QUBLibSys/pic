@@ -37,6 +37,8 @@ else {
 
 $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
+
+
 ?>
 
 
@@ -96,14 +98,14 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
     <!-- start foreach -->
     <?php foreach ($results as $result) : 
     $empty_value = 'Not Available';
-    // $p_class = 'class="text-muted"';
+    $shelfmark = !empty($result['marc_099_coll_ident']) ? $result['marc_099_coll_ident'] : $result['marc_090_coll_ident'] ;
     ?>
 
       <div class="card list-view-brand">
         <div class="card-header" role="tab">
           <p title="Click to expand">
             <a data-toggle="collapse" id="#<?php echo $result['record_id'] ?>" href="#<?php echo $result['record_id'] ?>" aria-expanded="false" aria-controls="<?php echo $result['record_id'] ?>" class="collapsed">
-              <?php echo $result['marc_099_coll_ident']?> | <strong  id="accordian-title"><?php echo mb_strimwidth($result['marc_245_title_stmt'], 0, 100, "...")?></strong>
+              <?php echo $shelfmark ?> | <strong  id="accordian-title"><?php echo mb_strimwidth($result['marc_245_title_stmt'], 0, 100, "...")?></strong>
             </a>
           </p>
           <div class="item-tags">
@@ -217,7 +219,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 <?php endif; ?>
 
 <script type="text/javascript">
-  $("h5, h6").mark("<?php echo $q_term ?>", {
+  $("#accordion p").mark("<?php echo $q_term ?>", {
     "element": "span",
     "className": "highlight"
 });
