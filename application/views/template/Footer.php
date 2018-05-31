@@ -1,8 +1,4 @@
-<!-- close container  -->
-</div> <!-- /container -->
-
-
-<footer class="pic-footer" role="contentinfo">
+<footer class="pic-footer">
     <div class="mt-5 pb-5 pt-5">
         <div class="container">
             <div class="row">
@@ -21,7 +17,7 @@
                 </div>
                 <div class="col-md-3">
                     <p style="font-size:2rem">Location</p>
-                    <img src="<?php echo base_url('assets\img\location.png'); ?>" alt="queens location">
+                    <img src="<?php echo base_url('assets/img/location.png'); ?>" alt="Queen's University Belfast Location">
                 </div>
                 <div class="col-md-3">
                     <p style="font-size:2rem">Links</p>
@@ -45,7 +41,8 @@
             </div>
         </div>
     </div>
+</div>
+</footer>
 
 </body>
-</footer>
 </html>
