@@ -74,7 +74,7 @@ class Search extends CI_Controller{
         $data['end'] = (int)$this->uri->segment(3) + $config['per_page'];
       }
 
-      $data['resultCount'] = 'Showing '. $data['start'] .' to '. $data['end'] .' of '. $data['total'] .' </strong> ';
+      $data['resultCount'] = 'Showing '. $data['start'] .' to '. $data['end'] .' of '. $data['total'];
       $data['getCollections'] = $this->search_model->getCollections();
       $data['coll_id'] = $this->input->get('coll_id');
 

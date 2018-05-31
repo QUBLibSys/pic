@@ -1,7 +1,3 @@
-<!-- swiper style -->
-
-
-<!-- <main role="main"> -->
 	<section class="jumbotron text-center" aria-label="Page description">
 		<div class="container">
 			<h1 class="display-4 title-blue">Personal and Institutional Collections</h1>
@@ -9,7 +5,6 @@
 			<p class="lead"> We have approximately <a href="<?php echo base_url() ?>/search"> <?php echo $recordCount->count ?> records </a> in our collection.</p>
 		</div>
 	</section>
-<!-- </main> -->
 
 <div class="container">
 	<div class="row justify-content-center">
@@ -50,7 +45,7 @@
 
 
 <div class="container-fluid collection-slider">
-  	<div class="swiper-container" href="<?php echo base_url() ?>collmain">
+  	<div class="swiper-container">
   		<div class="swiper-wrapper">
   		<!-- start for each -->
   		<?php 
@@ -89,15 +84,6 @@
   	</div> <!-- end swiper container -->
 </div>
 
-<!-- <div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center">
-			<hr>
-			<p class="text-muted">Need assistance?</p>
-			<p><a href="mailto:specialcollections@qub.ac.uk">specialcollections@qub.ac.uk</a></p>
-		</div>
-	</div>
-</div> -->
 
 <!-- Initialize Swiper -->
 <script>

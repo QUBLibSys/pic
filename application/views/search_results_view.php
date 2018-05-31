@@ -37,10 +37,7 @@ else {
 
 $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
-
-
 ?>
-
 
   <div class="jumbotron">
     <div class="container">
@@ -208,7 +205,6 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
   <?php echo $links ?>
 </div>
 </div> <!-- end row -->
-</div> <!-- end container -->
 
 <?php else: ?>
 
@@ -218,20 +214,16 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
 <?php endif; ?>
 
-<script type="text/javascript">
+<!-- highlight search terms -->
+<script> 
   $("#accordion p").mark("<?php echo $q_term ?>", {
     "element": "span",
     "className": "highlight"
 });
 </script>
 
-<script type="text/javascript">
-  $(document).ready(function(){
 
-  });
-</script>
-
-<script type="text/javascript"> 
+<script> 
 $(document).ready(function($){
 // Remove empty fields from GET forms
  $("form").submit(function() {
@@ -243,7 +235,7 @@ $( "form" ).find( ":input" ).prop( "disabled", false );
 });
 </script>
 
-<script type="text/javascript">
+<script> 
   $(".dropdown-menu a").click(function(){
     var selText = $(this).text();
    //Get the value
@@ -255,7 +247,7 @@ $( "form" ).find( ":input" ).prop( "disabled", false );
 </script>
 
 <!-- redirect to main search page on form reset -->
-<script type="text/javascript">
+<script> 
   $(document).ready(function() {
     $("#resetForm").click(function(){
       window.location.href = "<?php echo base_url() ?>search/results";
