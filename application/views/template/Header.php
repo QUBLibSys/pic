@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head role="banner">
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- Responsive Meta tag -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="copyright" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="A catalogue of some of the discrete library collections held in Special Collections at Queen's University Belfast.">
+	<meta name="author" content="Queen's University Belfast">
+	<meta name="copyright" content="Queen's University Belfast">
+	<meta name="keywords" content="rare books, early printed books, discrete print collections, significant printed works, pamphlets, collection level descriptions, Special Collections, Queen’s University Belfast, Personal and Institutional Collections">
 	<meta name="robots" content="index, follow">
 	<meta name="DC.title" content="">
+	
+	<!-- facebook metadata -->
+	<meta property="og:title" content="Personal and Institutional Collections. Queen's University Belfast">
+	<meta property="og:description" content="A catalogue of some of the discrete library collections held in Special Collections at Queen's University Belfast.">
 
-	<title>Personal and Institutional Collections</title>
+	<!-- twitter metadata -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@QUBSC">
+	<meta name="twitter:title" content="Personal and Institutional Collections. Queen's University Belfast">
+	<meta name="twitter:description" content="A catalogue of some of the discrete library collections held in Special Collections at Queen's University Belfast.">
 
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5afebee44919d90011178487&product=social-ab' async='async'></script>
+	<title>Personal and Institutional Collections. Queen's University Belfast</title>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -76,8 +82,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
-<body role="main">
 
+<body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCSQ79T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -94,9 +100,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Find a collection">Collections</a>
 					<div class="dropdown-menu">
-						<!-- populate the dropdown from database rather than code inline -->
 						<?php foreach ($collections as $collection): ?>
-							<a href="<?php echo base_url(); ?>collection/<?php echo $collection->url ?>" class="dropdown-item collection-menu" value="<?php echo $collection->collection_id ?>"><?php echo $collection->name ?></a>
+							<a href="<?php echo base_url(); ?>collection/<?php echo $collection->url ?>" class="dropdown-item collection-menu"><?php echo $collection->name ?></a>
 						<?php endforeach; ?>
 					</div>
 				</li>

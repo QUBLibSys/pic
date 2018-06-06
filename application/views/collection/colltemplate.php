@@ -18,8 +18,8 @@
 		<div class="row">
 			<div class="col-md">
 				<h2>About</h2>
-				<p><?php echo $items->coll_info_more ?> </p>
-				<p><?php echo $items->coll_info_notes ?> </p>
+				<p class="lead"><?php echo $items->coll_info_more ?> </p>
+				<p class="lead"><?php echo $items->coll_info_notes ?> </p>
 				
 			</div>
 		</div>

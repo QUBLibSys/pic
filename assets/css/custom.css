@@ -43,6 +43,11 @@ body a {
 	background-color: #004D7E;
 }
 
+/*jumbotron bk colour*/
+.jumbotron {
+    background-color: white;
+}
+
 
 /* Text Colour for heading on all records */
 #all-header {
