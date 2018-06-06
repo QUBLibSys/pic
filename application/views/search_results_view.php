@@ -254,3 +254,10 @@ $( "form" ).find( ":input" ).prop( "disabled", false );
     });
   });
 </script>
+
+<!-- expand the accordion item based on URL  -->
+<script>
+  $(document).ready(function () {
+    location.hash && $(location.hash + '.collapse').show();
+  });
+</script>
