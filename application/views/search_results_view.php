@@ -179,10 +179,10 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
                 <p class="my-0"><?php echo $result['marc_260_pub'];?></p>
               </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <li class="list-group-item justify-content-between lh-condensed">
               <div>
-                <small class="text-muted">Encore URL</small>
-                <p title="External Link" id="encore_link" class="my-0"><a href="<?php echo $result['encore_url'] ?>" class="text-primary"><?php echo $result['encore_url'] ?></a></p>
+                <small class="text-muted" >Encore URL</small>
+                <p title="External Link" class="my-0"><a href="<?php echo $result['encore_url'] ?>" class="text-primary"><?php echo $result['encore_url'] ?></a></p>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">

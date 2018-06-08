@@ -1,9 +1,5 @@
 /* custom css rules */
 
-#encore_link{
-	overflow-wrap: break-word;
-}
-
 body {
 	padding-top: 3.5rem;
 	font-family: 'Roboto', sans-serif;
@@ -120,7 +116,7 @@ body a {
 	/* Remove borders */
 	outline: none;
 	/* Remove outline */
-	background-color: #212529a8;
+	background-color: #212529;
 	/* Set a background color */
 	color: white;
 	/* Text color */
@@ -193,6 +189,11 @@ body a {
   font-size: 1.65em;
 }
 
+.card-body {
+	padding: 0.15rem;
+	margin-top: 1rem;
+}
+
 .collection-slider {
 	background: linear-gradient(180deg, #004D7E 50%, #ffffff 50%);
 }
@@ -251,7 +252,7 @@ body a {
 
 /* END FOOTER STYLING */
 
-@media screen and (max-height: 450px) {
+@media only screen and (max-height: 768px) {
 	.overlay a {
 		font-size: 20px
 	}
@@ -260,4 +261,19 @@ body a {
 		top: 15px;
 		right: 35px;
 	}
+
+	.jumbotron{
+		padding: 0.5rem 0.5rem;
+		margin-bottom: 0.3rem;
+		margin-top: 0.3rem;
+	}
+
+	.jumbotron .display-4{
+		font-size: 2rem;
+	}
+
+	.jumbotron .lead{
+		font-size: 0.9rem;
+	}
+
 }
