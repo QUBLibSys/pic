@@ -1,4 +1,7 @@
+	<!-- Google Recaptcha -->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
+	
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-4 title-blue"><?php echo $title ?></h1>
