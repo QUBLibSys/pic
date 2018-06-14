@@ -34,9 +34,8 @@
                 </style>
                 <p style="font-size:2rem">Social</p>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com" class="fab fa-2x fa-facebook-f" aria-label="Our Facebook Page" title="Facebook"></a>
-                    <a href="https://www.twitter.com" class="fab fa-2x fa-twitter" aria-label="Our Twitter Page" title="Twitter"></a>
-                    <a href="https://www.instagram.com" class="fab fa-2x fa-instagram" aria-label="Our Insta Page" title="Insta"></a>
+                    <a href="https://www.Facebook.com"><img src="<?php echo base_url('assets/img/fb.png'); ?>" alt="Facebook" width="50px"></a>
+                    <a href="https://www.twitter.com"><img src="<?php echo base_url('assets/img/tw.png'); ?>" alt="Twitter" width="50px"></a>
                 </div>
             </div>
         </div>
