@@ -14,7 +14,7 @@ body a {
 .page-item.active .page-link {
 	background-color: #004D7E;
 
-	
+
 
 }
 
@@ -277,5 +277,17 @@ body a {
 	.jumbotron .lead{
 		font-size: 0.9rem;
 	}
+
+	.pic-footer{
+		font-size: 0.8rem;
+	}
+
+	.pic-footer p{
+		font-size: 1rem;
+		font-weight: bold;
+	}
+
+
+
 
 }

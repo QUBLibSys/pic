@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <p style="font-size:2rem">Contact</p>
+                    <p>Contact</p>
                     <address>
                         Special Collections <br>
                         The McClay Library <br>
@@ -16,11 +16,11 @@
 
                 </div>
                 <div class="col-md-3">
-                    <p style="font-size:2rem">Location</p>
+                    <p>Location</p>
                     <img src="<?php echo base_url('assets/img/location.png'); ?>" alt="Queen's University Belfast Location">
                 </div>
                 <div class="col-md-3">
-                    <p style="font-size:2rem">Links</p>
+                    <p>Links</p>
                     <ul class="list-unstyled text-small">
                         <li><a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections/Manuscripts/" title="Special Collections Manuscripts">Manuscripts</a></li>
                         <li><a href="http://www.rascal.ac.uk/" title="Explore in detail on RASCAL">RASCAL</a></li>
@@ -32,7 +32,7 @@
                     <style>
 
                 </style>
-                <p style="font-size:2rem">Social</p>
+                <p>Social</p>
                 <div class="social-icons">
                     <a href="https://www.Facebook.com"><img src="<?php echo base_url('assets/img/fb.png'); ?>" alt="Facebook" width="50px"></a>
                     <a href="https://www.twitter.com"><img src="<?php echo base_url('assets/img/tw.png'); ?>" alt="Twitter" width="50px"></a>
