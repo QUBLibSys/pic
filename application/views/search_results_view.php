@@ -103,7 +103,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
               <div class="card list-view-brand">
                 <div class="card-header" role="tab">
                   <p title="Click to expand">
-                    <a data-toggle="collapse" id="#<?php echo $result['record_id'] ?>" href="#<?php echo $result['record_id'] ?>" aria-expanded="false" aria-controls="<?php echo $result['record_id'] ?>" class="collapsed">
+                    <a data-toggle="collapse" id="#<?php echo $result['record_id'] ?>" href="#<?php echo $result['record_id'] ?>" aria-expanded="false" aria-controls="<?php echo $result['record_id'] ?>" class="collapsed" value="xxx">
                       <?php echo $shelfmark ?> | <strong  id="accordian-title"><?php echo mb_strimwidth($result['marc_245_title_stmt'], 0, 100, "...")?></strong>
                     </a>
                   </p>
@@ -179,6 +179,12 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
                         <div>
                           <small class="text-muted">Location of Publishers</small>
                           <p class="my-0"><?php echo $result['marc_260_pub'];?></p>
+                        </div>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                          <small class="text-muted">Location of Publishers</small>
+                          <p class="my-0">TBC</p>
                         </div>
                       </li>
                       <li class="list-group-item justify-content-between lh-condensed">
