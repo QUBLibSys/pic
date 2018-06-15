@@ -1,3 +1,5 @@
+<div id="loader"></div>
+<div id="page">
 <?php 
 $selected = "selected=selected"; 
 $q_term = $this->input->get('q');
@@ -189,11 +191,12 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
                         <div>
                           <small class="text-muted">Share this</small>
                           <br>
-                          <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.pic.com%2Fsearch%2F<?php echo $result['encore_url']?>&layout=button&size=small&mobile_iframe=false&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="<?php echo $result['encore_url']?>" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fpic%2Fsearch%2Fresults%2F%3Fq%3Dpercy%23<?php echo $result['record_id']?>&layout=button&size=small&mobile_iframe=true&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                          
+                          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="http://localhost/pic/search/results/?q=percy#<?php echo $result['record_id']?>" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
                       </li>
-                    </ul>         
+                    </ul>
                   </div>
                 </div>
               </div> <!-- end card -->
@@ -211,7 +214,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
       <?php else: ?>
 
         <div class="container">
-          <p>No results. <a href="<?php echo base_url() ?>search">Search again. </a> </p> 
+          <p>No results. <a href="<?php echo base_url() ?>search">Search again. </a> </p>
         </div>
 
       <?php endif; ?>
@@ -225,7 +228,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
       </script>
 
 
-      <script> 
+      <script>
         $(document).ready(function($){
 // Remove empty fields from GET forms
 $("form").submit(function() {
@@ -263,3 +266,26 @@ $( "form" ).find( ":input" ).prop( "disabled", false );
     location.hash && $(location.hash + '.collapse').show();
   });
 </script>
+
+ </div>  <script>
+function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 2000);
+
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+    show('page', true);
+    show('loader', false);
+});
+  </script>
+ 

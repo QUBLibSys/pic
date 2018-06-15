@@ -1,3 +1,8 @@
+	<!-- swiper -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" />
+	<!-- swiper -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+	
 	<section class="jumbotron text-center" aria-label="Page description">
 		<div class="container">
 			<h1 class="display-4 title-blue">Personal and Institutional Collections</h1>
