@@ -6,7 +6,7 @@ class Search extends CI_Controller{
     public function __construct() {
         parent::__construct();
         $this->load->database();
-        $this->load->model('search_model');
+        $this->load->model('Search_model');
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->library('session');
@@ -35,7 +35,7 @@ class Search extends CI_Controller{
       $config['base_url']         = base_url().'search/results';
       $config['use_page_numbers'] = FALSE; 
       $config['reuse_query_string'] = TRUE;
-      $config['total_rows']       = $this->search_model->record_count($search_term, $coll_id, $start_year, $end_year);
+      $config['total_rows']       = $this->Search_model->record_count($search_term, $coll_id, $start_year, $end_year);
       $config['per_page']         = 50;
       $config['num_links']        = 3;
       $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination">';
@@ -59,13 +59,13 @@ class Search extends CI_Controller{
       $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
       $data = array(
-        'results'       =>  $this->search_model->fetch_records($config["per_page"], $page, $search_term, $coll_id, $start_year, $end_year),
+        'results'       =>  $this->Search_model->fetch_records($config["per_page"], $page, $search_term, $coll_id, $start_year, $end_year),
         'term'          =>  $search_term,
         'total'         =>  $config['total_rows'],
         'start'         =>  (int)$this->uri->segment(3) + 1,
         'links'         =>  $this->pagination->create_links(),
-        'collection'    =>  $this->search_model->getCollection($coll_id),
-        'collections'   =>  $this->search_model->getCollections()
+        'collection'    =>  $this->Search_model->getCollection($coll_id),
+        'collections'   =>  $this->Search_model->getCollections()
       );
         // configure results overview 'x of x returned..'
       if ($this->uri->segment(3) + $config['per_page'] > $config['total_rows']) {
@@ -75,12 +75,12 @@ class Search extends CI_Controller{
       }
 
       $data['resultCount'] = 'Showing '. $data['start'] .' to '. $data['end'] .' of '. $data['total'];
-      $data['getCollections'] = $this->search_model->getCollections();
+      $data['getCollections'] = $this->Search_model->getCollections();
       $data['coll_id'] = $this->input->get('coll_id');
 
-      $this->load->view('template/header', $data);
-      $this->load->view('search_results_view',$data);
-      $this->load->view('template/footer');
+      $this->load->view('template/Header', $data);
+      $this->load->view('Search_results_view',$data);
+      $this->load->view('template/Footer');
     }
 
 }

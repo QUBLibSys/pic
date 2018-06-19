@@ -22,15 +22,15 @@ class Collection extends CI_Controller{
             'collections'   =>  $this->search_model->getCollections()
             );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/index', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Index', $data);
+        $this->load->view('template/Footer');
 
     }
 
     public function percy (){
 
-        $coll_name = $this->uri->segment(2);
+        $coll_name = $this->uri->segment(3);
 
         $data = array(
             'items' => $this->search_model->getCollection(1),
@@ -39,16 +39,16 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 
 
     public function foster (){
 
-        $coll_name = $this->uri->segment(2);
+        $coll_name = $this->uri->segment(3);
 
         $data = array(
             'items' => $this->search_model->getCollection(5),
@@ -57,15 +57,15 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 
     public function orahilly (){
 
-        $coll_name = $this->uri->segment(2);
+        $coll_name = $this->uri->segment(3);
 
         $data = array(
             'items' => $this->search_model->getCollection(3),
@@ -74,16 +74,16 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 
 
     public function wright (){
 
-        $coll_name = $this->uri->segment(2);
+        $coll_name = $this->uri->segment(3);
 
         $data = array(
             'items' => $this->search_model->getCollection(4),
@@ -92,15 +92,15 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 
     public function macdouall (){
 
-        $coll_name = $this->uri->segment(2);
+        $coll_name = $this->uri->segment(3);
 
         $data = array(
             'items' => $this->search_model->getCollection(2),
@@ -109,9 +109,9 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 }
