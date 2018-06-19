@@ -30,7 +30,7 @@ class Collection extends CI_Controller{
 
     public function percy (){
 
-        $coll_name = $this->uri->segment(3);
+        $coll_name = $this->uri->segment(2);
 
         $data = array(
             'items' => $this->search_model->getCollection(1),
@@ -48,7 +48,7 @@ class Collection extends CI_Controller{
 
     public function foster (){
 
-        $coll_name = $this->uri->segment(3);
+        $coll_name = $this->uri->segment(2);
 
         $data = array(
             'items' => $this->search_model->getCollection(5),
@@ -65,7 +65,7 @@ class Collection extends CI_Controller{
 
     public function orahilly (){
 
-        $coll_name = $this->uri->segment(3);
+        $coll_name = $this->uri->segment(2);
 
         $data = array(
             'items' => $this->search_model->getCollection(3),
@@ -83,7 +83,7 @@ class Collection extends CI_Controller{
 
     public function wright (){
 
-        $coll_name = $this->uri->segment(3);
+        $coll_name = $this->uri->segment(2);
 
         $data = array(
             'items' => $this->search_model->getCollection(4),
@@ -100,7 +100,7 @@ class Collection extends CI_Controller{
 
     public function macdouall (){
 
-        $coll_name = $this->uri->segment(3);
+        $coll_name = $this->uri->segment(2);
 
         $data = array(
             'items' => $this->search_model->getCollection(2),
