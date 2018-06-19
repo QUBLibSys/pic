@@ -52,7 +52,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-8 mb-4">
+    <div class="col-md-10 mb-4">
       <?php 
       $data = array(
         'method'  =>  'get'
