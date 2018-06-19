@@ -103,7 +103,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
               <div class="card list-view-brand">
                 <div class="card-header" role="tab">
                   <p title="Click to expand">
-                    <a data-toggle="collapse" id="#<?php echo $result['record_id'] ?>" href="#<?php echo $result['record_id'] ?>" aria-expanded="false" aria-controls="<?php echo $result['record_id'] ?>" class="collapsed" value="xxx">
+                    <a data-toggle="collapse" id="#<?php echo $result['record_id'] ?>" href="#<?php echo $result['record_id'] ?>" aria-expanded="false" aria-controls="<?php echo $result['record_id'] ?>" class="collapsed ga-accordian-tag" value="xxx">
                       <?php echo $shelfmark ?> | <strong  id="accordian-title"><?php echo mb_strimwidth($result['marc_245_title_stmt'], 0, 100, "...")?></strong>
                     </a>
                   </p>
