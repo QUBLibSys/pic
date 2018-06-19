@@ -33,14 +33,14 @@ class Search_model extends CI_Model {
             $this->db->where('coll_id', $coll_id);
         }
         if(!empty($start_year) && empty($end_year)){
-            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS SIGNED)', NULL,FALSE);
         }
         if(!empty($end_year) && empty($start_year)){
-            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS SIGNED)', NULL,FALSE);
         }
         if(!empty($start_year) && !empty($end_year)){
-            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
-            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS SIGNED)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS SIGNED)', NULL,FALSE);
         }
         if(!empty($search_term)){
             $this->db->group_start() 
@@ -67,14 +67,14 @@ class Search_model extends CI_Model {
             $this->db->where('coll_id', $coll_id);
         }
         if(!empty($start_year) && empty($end_year)){
-            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS SIGNED)', NULL,FALSE);
         }
         if(!empty($end_year) && empty($start_year)){
-            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS SIGNED)', NULL,FALSE);
         }
         if(!empty($start_year) && !empty($end_year)){
-            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS int)', NULL,FALSE);
-            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS int)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year >= CAST('.$start_year.' AS SIGNED)', NULL,FALSE);
+            $this->db->where('marc_260c_pub_year <= CAST('.$end_year.' AS SIGNED)', NULL,FALSE);
         }
         if(!empty($search_term)){
             $this->db->group_start() 
