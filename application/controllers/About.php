@@ -8,7 +8,7 @@ class About extends CI_Controller{
         parent::__construct();
         $this->load->database();
         $this->load->helper('form');
-        $this->load->model('search_model');
+        $this->load->model('Search_model');
         //$this->output->enable_profiler(TRUE); 
     }
 
@@ -16,12 +16,12 @@ class About extends CI_Controller{
 
 		$data = array(
 			'title'			=>	'About',
-			'collections'   =>  $this->search_model->getCollections()
+			'collections'   =>  $this->Search_model->getCollections()
 		);
 
-		$this->load->view('template/header', $data);
+		$this->load->view('template/Header', $data);
 		$this->load->view('About_view', $data);
-		$this->load->view('template/footer');
+		$this->load->view('template/Footer');
 
 	}
 

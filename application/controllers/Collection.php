@@ -22,9 +22,9 @@ class Collection extends CI_Controller{
             'collections'   =>  $this->search_model->getCollections()
             );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/index', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Index', $data);
+        $this->load->view('template/Footer');
 
     }
 
@@ -39,9 +39,9 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 
@@ -57,9 +57,9 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 
@@ -74,9 +74,9 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 
@@ -92,9 +92,9 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 
@@ -109,9 +109,9 @@ class Collection extends CI_Controller{
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
-        $this->load->view('template/header', $data);
-        $this->load->view('collection/colltemplate', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/Header', $data);
+        $this->load->view('collection/Colltemplate', $data);
+        $this->load->view('template/Footer');
 
     }
 }
