@@ -76,8 +76,8 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
           <div class="input-group-prepend">
             <span class="input-group-text" title="Enter start and end year">Filter by Year</span>
           </div>
-          <input type="text" name="start_year" class="form-control" value="<?php echo $this->input->get('start_year') ?>" placeholder="start year" maxlength="4" aria-label="Enter start year">
-          <input type="text" name="end_year" class="form-control" value="<?php echo $this->input->get('end_year') ?>" placeholder="end year" maxlength="4" aria-label="Enter end year">
+          <input type="number" min="1100" max="3000" name="start_year" class="form-control" value="<?php echo $this->input->get('start_year') ?>" placeholder="start year" maxlength="4" aria-label="Enter start year">
+          <input type="number" min="1100" max="3000" name="end_year" class="form-control" value="<?php echo $this->input->get('end_year') ?>" placeholder="end year" maxlength="4" aria-label="Enter end year">
         </div>
         <br>
         <input class="btn btn-primary" type="submit" name="submit" title="Submit search query">
@@ -200,6 +200,22 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
                           <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fpic%2Fsearch%2Fresults%2F%3Fq%3Dpercy%23<?php echo $result['record_id']?>&layout=button&size=small&mobile_iframe=true&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                           
                           <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="http://localhost/pic/search/results/?q=percy#<?php echo $result['record_id']?>" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+                          <input type="button" value="Copy Url" onclick="Copy();"/>
+                          <script type="text/javascript">
+                            function Copy(){
+                              vae Url = document.g
+                            }
+                          </script>
+
+
+
+
+
+
+
+
                         </div>
                       </li>
                     </ul>

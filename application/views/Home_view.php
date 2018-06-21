@@ -37,8 +37,8 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text" title="Filter by year">Filter by Year</span>
 				</div>
-				<input type="text" name="start_year" class="form-control" placeholder="start year" maxlength="4" aria-label="Enter start year">
-				<input type="text" name="end_year" class="form-control" placeholder="end year" maxlength="4" aria-label="Enter end year">
+				<input type="number" min="0" max="9999" name="start_year" class="form-control" placeholder="start year" maxlength="4" aria-label="Enter start year">
+				<input type="number" min="1" max="9999" name="end_year" class="form-control" placeholder="end year" maxlength="4" aria-label="Enter end year">
 			</div>
 			<br>
 			<input class="btn btn-primary" type="submit" name="submit" title="Submit search query">
