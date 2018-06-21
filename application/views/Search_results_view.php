@@ -2,7 +2,6 @@
 <div id="page">
 <?php 
 $selected = "selected=selected"; 
-$q_term = $this->input->get('q');
 
 if(!empty($collection)){
   $coll_term = $collection->name;
@@ -13,30 +12,10 @@ else {
 }
 
 $coll_id = is_null($coll_id) ? 'Filter' : $coll_term;
-$start_year_term = $this->input->get('start_year');
-$end_year_term = $this->input->get('end_year');
 
-if(isset($q_term)) {
-  $query_strings['q'] = $q_term;
-}
-else {
-  $query_strings['q'] = NULL; 
-}
-
-if(isset($start_year_term)) {
-  $query_strings['start_year'] = 'Start Year ' .$start_year_term;
-}
-else {
-  $query_strings['start_year'] = NULL; 
-}
-
-if(isset($end_year_term)) {
-  $query_strings['end_year'] = 'End Year ' .$end_year_term;
-}
-else {
-  $query_strings['end_year'] = NULL; 
-}
-
+// get array of search terms from URL
+$query_strings = array($term, $coll_id, $start_year, $end_year);
+// split array and comma separate
 $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
 ?>
@@ -243,7 +222,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
 
       <!-- highlight search terms -->
       <script> 
-        $("#accordion p").mark("<?php echo $q_term ?>", {
+        $("#accordion p").mark("<?php echo $term ?>", {
           "element": "span",
           "className": "highlight"
         });

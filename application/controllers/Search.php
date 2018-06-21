@@ -61,6 +61,9 @@ class Search extends CI_Controller{
       $data = array(
         'results'       =>  $this->Search_model->fetch_records($config["per_page"], $page, $search_term, $coll_id, $start_year, $end_year),
         'term'          =>  $search_term,
+		'coll_id'       =>  $coll_id,
+		'start_year'    =>  $start_year,
+		'end_year'      =>  $end_year,
         'total'         =>  $config['total_rows'],
         'start'         =>  (int)$this->uri->segment(3) + 1,
         'links'         =>  $this->pagination->create_links(),

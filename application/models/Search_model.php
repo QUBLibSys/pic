@@ -124,12 +124,12 @@ class Search_model extends CI_Model {
 
     // get a random collection of records based on collection name
     public function getCollectionSampleByName($coll_name) {
-        $this->db->select('marc_245_title_stmt, marc_260c_pub_year');
+        $this->db->select('*');
         $this->db->from('records');
         $this->db->join('collections', 'records.coll_id = collections.collection_id', 'inner');
         $this->db->where('collections.url', $coll_name);
         $this->db->order_by('rand()');
-        $this->db->limit(5);
+        $this->db->limit(3);
         $query = $this->db->get();
         return $query->result_array();
     }

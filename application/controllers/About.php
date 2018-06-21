@@ -16,6 +16,7 @@ class About extends CI_Controller{
 
 		$data = array(
 			'title'			=>	'About',
+			'subtitle'		=>	'Personal and Institutional Collections. Queen\'s University Belfast',
 			'collections'   =>  $this->Search_model->getCollections()
 		);
 
