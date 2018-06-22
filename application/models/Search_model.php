@@ -20,7 +20,6 @@ class Search_model extends CI_Model {
         return $query->result_object();
     }
    
-   
     // get records based on search input
     public function fetch_records($limit, $start, $search_term, $coll_id, $start_year, $end_year) {
 
@@ -130,6 +129,15 @@ class Search_model extends CI_Model {
         $this->db->where('collections.url', $coll_name);
         $this->db->order_by('rand()');
         $this->db->limit(3);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    // get collection info by collection id
+    public function getRecordById($item_id) {
+        $this->db->select('*');
+        $this->db->from('records');
+        $this->db->where('record_id', $item_id);
         $query = $this->db->get();
         return $query->result_array();
     }

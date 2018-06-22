@@ -50,6 +50,11 @@ body a {
     background-color: white;
 }
 
+/* condensed padding */
+.jumbotron-condensed {
+	padding-bottom: 0;
+}
+
 
 /* Text Colour for heading on all records */
 #all-header {
@@ -184,11 +189,11 @@ body a {
   text-align:left;
 }
 
-.card-title {
-  margin-top:0px;
-  font-weight: 700;
-  font-size: 1.65em;
-}
+/* .card-title { */
+  /* margin-top:0px; */
+  /* font-weight: 700; */
+  /* font-size: 1.65em; */
+/* } */
 
 .card-body {
 	padding: 0.15rem;

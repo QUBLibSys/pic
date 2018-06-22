@@ -15,7 +15,7 @@ class Collection extends CI_Controller{
 
 
     public function index (){
-        
+
         $data = array(
             'title'     =>  'All Collections',
             'subtitle'  =>  'Choose A Collection Below',
@@ -28,10 +28,30 @@ class Collection extends CI_Controller{
 
     }
 
-    public function percy (){
-
+    public function percy ($item = NULL, $item_id = NULL){
+ 
         $coll_name = $this->uri->segment(2);
-
+				
+		// if url does not contain record id
+		if ($this->uri->uri_string() == 'collection/'.$coll_name.'/item') {
+			show_404();
+		}
+		
+		// if item and item_id are in url
+		if ($item == 'item' && is_numeric($item_id) ) {
+			$item_id = $this->uri->segment(4);
+			$data = array(
+				'title' 		=> 'Item View',
+				'subtitle'   	=>  'Item Name',
+				'itemInfo'  	=>  $this->search_model->getRecordById($item_id)
+			);
+			$this->load->view('template/Header', $data);
+			$this->load->view('collection/Item_view', $data);
+			$this->load->view('template/Footer');
+		}
+		
+		// if not paramaters passed
+		if ( is_null($item) && is_null($item_id) ) {
         $data = array(
             'items' => $this->search_model->getCollection(1),
             'collections'   =>  $this->search_model->getCollections(),
@@ -42,9 +62,20 @@ class Collection extends CI_Controller{
         $this->load->view('template/Header', $data);
         $this->load->view('collection/Colltemplate', $data);
         $this->load->view('template/Footer');
+		}
+		
+        // $data = array(
+            // 'items' => $this->search_model->getCollection(1),
+            // 'collections'   =>  $this->search_model->getCollections(),
+            // 'collectionSample'   =>  $this->search_model->getCollectionSampleByName($coll_name),
+            // 'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
+        // );
+
+        // $this->load->view('template/Header', $data);
+        // $this->load->view('collection/Colltemplate', $data);
+        // $this->load->view('template/Footer');
 
     }
-
 
     public function foster (){
 
