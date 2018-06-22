@@ -134,10 +134,12 @@ class Search_model extends CI_Model {
     }
 
     // get collection info by collection id
-    public function getRecordById($item_id) {
+    public function getRecordById($coll_name, $item_id) {
         $this->db->select('*');
         $this->db->from('records');
+		$this->db->join('collections', 'records.coll_id = collections.collection_id', 'inner');
         $this->db->where('record_id', $item_id);
+		$this->db->where('collections.url', $coll_name);
         $query = $this->db->get();
         return $query->result_array();
     }

@@ -1,16 +1,15 @@
-
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-4 title-blue"><?php echo $items->name ?> Collection</h1>
-			<p class="lead"><?php echo $items->coll_info ?></p>
+			<h1 class="display-4 title-blue"><?php echo $items[0]['name'] ?> Collection</h1>
+			<p class="lead"><?php echo $items[0]['coll_info'] ?></p>
 			<blockquote class="blockquote">
-  					<div class="blockquote-footer">Collected by <cite title="Source Title"><?php echo $items->collected_by ?></cite></div>
+  					<div class="blockquote-footer">Collected by <cite title="Source Title"><?php echo $items[0]['collected_by'] ?></cite></div>
 			</blockquote>
 		</div>
 	</div>
 	<div class="text-center">
-		<img src="<?php echo base_url().$items->logo ?>" class="rounded mx-auto d-block img-thumbnail mb-3" alt="<?php echo $items->coll_name ?>" title="<?php echo $items->coll_name ?>">
-		<a class="btn btn-sm btn-dark" href="<?php echo base_url() ?>search/results/?coll_id=<?php echo $items->collection_id ?>" role="button" title="List of all records">View All Records <span class="badge badge-light"><?php echo $collectionCount->count ?></span></a>
+		<img src="<?php echo base_url().$items[0]['logo'] ?>" class="rounded mx-auto d-block img-thumbnail mb-3" alt="<?php echo $items[0]['coll_name'] ?>" title="<?php echo $items[0]['coll_name'] ?>">
+		<a class="btn btn-sm btn-dark" href="<?php echo base_url() ?>search/results/?coll_id=<?php echo $items[0]['collection_id'] ?>" role="button" title="List of all records">View All Records <span class="badge badge-light"><?php echo $collectionCount->count ?></span></a>
 	</div>
 
 
@@ -18,8 +17,8 @@
 		<div class="row">
 			<div class="col-md">
 				<h2>About</h2>
-				<p class="lead"><?php echo $items->coll_info_more ?> </p>
-				<p class="lead"><?php echo $items->coll_info_notes ?> </p>
+				<p class="lead"><?php echo $items[0]['coll_info_more'] ?> </p>
+				<p class="lead"><?php echo $items[0]['coll_info_notes'] ?> </p>
 				
 			</div>
 		</div>
