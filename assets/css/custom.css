@@ -320,3 +320,18 @@ body a {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
 }
+
+
+
+.email-button {
+	background-color: #004D7E;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline;
+	font-size: 0.7rem;
+	font-weight: bold;
+	padding: 2.5px;
+	border-radius: 3px;
+}

@@ -180,21 +180,20 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
                           
                           <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="http://localhost/pic/search/results/?q=percy#<?php echo $result['record_id']?>" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
-                          <input type="button" value="Copy Url" onclick="Copy();"/>
+                          <button type="button" class="email-button" onclick="Copy();">Copy URL</button>
                           <script type="text/javascript">
                             function Copy(){
-                              vae Url = document.g
+                                    var box = document.createElement('input'),
+                                        text = window.location.href + "#<?php echo $result['record_id'] ?>";
+
+                                    document.body.appendChild(box);
+                                    box.value = text;
+                                    box.select();
+                                    document.execCommand('copy');
+                                    document.body.removeChild(box);
+
                             }
                           </script>
-
-
-
-
-
-
-
-
                         </div>
                       </li>
                     </ul>
