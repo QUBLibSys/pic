@@ -55,7 +55,12 @@ $shelfmark = !empty($sample['marc_099_coll_ident']) ? $sample['marc_099_coll_ide
     <p class="card-text"><a href="<?php echo $sample['encore_url'] ?>" class="text-primary"><?php echo $sample['encore_url'] ?></a></p>
 	
 	<hr>
-    <a href="#" class="card-link">share | print | export to pdf | copy url</a>
+    <!-- <a href="#" class="card-link">share | print | export to pdf | copy url</a> -->
+    <button type="button" class="btn btn-primary" onclick="printPage()">Print</button>
+    <button type="button" class="btn btn-primary" id="clickbind">Export to PDF</button>
+    <button type="button" class="btn btn-primary" onclick="copy()">Copy URL</button>
+
+    <button type="button" class="btn btn-primary" onclick="printPage()">Share</button>
   </div>
 </div>
 <?php endforeach; ?>
@@ -63,3 +68,41 @@ $shelfmark = !empty($sample['marc_099_coll_ident']) ? $sample['marc_099_coll_ide
           </div>
         </div> <!-- end row -->
 	</div> <!-- /container -->
+
+    <script type="text/javascript">
+        function printPage(){
+            window.print();
+        }
+    </script>
+
+    <script type="text/javascript">
+    function copy(){
+            var box = document.createElement('input'),
+                text = window.location.href;
+
+            document.body.appendChild(box);
+            box.value = text;
+            box.select();
+            document.execCommand('copy');
+            document.body.removeChild(box);
+
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
+  <script type="text/javascript">
+        function onClick() {
+          var pdf = new jsPDF('p', 'pt', 'letter');
+          pdf.canvas.height = 72 * 11;
+          pdf.canvas.width = 72 * 8.5;
+
+          pdf.fromHTML(document.body);
+
+          pdf.save('test.pdf');
+        };
+
+        var element = document.getElementById("clickbind");
+        element.addEventListener("click", onClick);
+
+  </script>
