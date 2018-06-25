@@ -13,18 +13,37 @@
 	<meta name="robots" content="index, follow">
 	<meta name="DC.title" content="">
 	
-	<!-- facebook metadata -->
-	<meta property="og:title" content="Personal and Institutional Collections. Queen's University Belfast">
-	<meta property="og:description" content="A catalogue of some of the discrete library collections held in Special Collections at Queen's University Belfast.">
-
-	<!-- twitter metadata -->
+	<?php 
+	if (!$this->uri->segment(1)) : ?>
+    <!-- homepage og metadata -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@QUBSC">
-	<meta name="twitter:title" content="Personal and Institutional Collections. Queen's University Belfast">
-	<meta name="twitter:description" content="A catalogue of some of the discrete library collections held in Special Collections at Queen's University Belfast.">
+	<meta name="twitter:creator" content="@QUBSC">
+	<meta property="og:title" content="Personal and Institutional Collections. Queen's University Belfast">
+	<meta property="og:description" content="A catalogue of some of the discrete library collections held in Special Collections at Queen's University Belfast.">	
+	<meta property="og:url" content="<?php echo current_url() ?>">
+	<meta property="og:image" content="<?php echo base_url() ?>assets/img/qub-logo-lg.jpg">
+	<?php endif; ?>
 
-	<title>Personal and Institutional Collections. Queen's University Belfast</title>
-
+	<?php 
+	if ($this->router->fetch_class() == 'collection') : ?>
+    <!-- collection page og metadata -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@QUBSC">
+	<meta name="twitter:creator" content="@QUBSC">
+	<meta property="og:title" content="Personal and Institutional Collections. Queen's University Belfast">
+	<meta property="og:description" content="<?php echo $itemInfo[0]['marc_245_title_stmt'] ?>">
+	<meta property="og:url" content="<?php echo current_url() ?>">
+	<meta property="og:image" content="<?php echo base_url() ?>assets/img/qub-logo-lg.jpg">
+	<meta name="DC.Description" content="<?php echo $itemInfo[0]['marc_245_title_stmt'] ?>">
+	<meta name="DC.Publisher" content="<?php echo $itemInfo[0]['marc_100_main_pers_name'];?>">
+	<meta name="DC.Contributor" content="<?php echo $itemInfo[0]['marc_700_add_pers_name'];?>">
+	<meta name="DC.Date" content="<?php echo $itemInfo[0]['marc_260c_pub_year'];?>">
+	<meta name="DC.Type" content="Text">
+	<meta name="DC.Language" content="<?php echo $itemInfo[0]['marc_008_lang'];?>">
+	<?php endif; ?>	
+	
+<title>Personal and Institutional Collections. Queen's University Belfast</title>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
