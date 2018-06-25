@@ -7,12 +7,11 @@ class Contact extends CI_Controller{
     {
         parent::__construct();
 
-$this->load->library('session');
-        
+		$this->load->library('session');
         $this->load->database();
         $this->load->helper('form');
         $this->load->model('Search_model');
-        $this->output->enable_profiler(TRUE); 
+        // $this->output->enable_profiler(TRUE); 
     }
 
 	public function index(){

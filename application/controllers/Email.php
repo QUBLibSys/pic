@@ -16,6 +16,18 @@ class Email extends CI_Controller{
     }
 
     public function index(){
+		
+		$secret = '6LftpGAUAAAAAIW5ZwlWGdgfr8jHNg8eCKHUqao8';
+		$recaptcha = new \ReCaptcha\ReCaptcha($secret);
+		$resp = $recaptcha->verify($gRecaptchaResponse, $remoteIp);
+		if ($resp->isSuccess()) {
+			// verified!
+			// if Domain Name Validation turned off don't forget to check hostname field
+			// if($resp->getHostName() === $_SERVER['SERVER_NAME']) {  }
+			echo 'SUCCESS';
+		} else {
+		$errors = $resp->getErrorCodes();
+		}
 
         $config = [
             'protocol' => 'smtp',

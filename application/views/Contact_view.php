@@ -47,7 +47,11 @@
 				</div>
 			</div>
 			<!-- Google recaptcha widget -->
-			<div class="g-recaptcha mb-2" data-sitekey="6LcbE1cUAAAAAIJRvyrnxty1X-rxcJ7VeY6ZRqeE"></div>
+			<!-- <div class="g-recaptcha mb-2" data-sitekey="6LcbE1cUAAAAAIJRvyrnxty1X-rxcJ7VeY6ZRqeE"></div> -->
+			
+			<!-- Google recaptcha widget live site -->
+			<div class="g-recaptcha" data-sitekey="6LftpGAUAAAAAMOxEC7G88O1oKmFOtyUFG91GINB"></div>
+			<hr>
 <script>
 	window.onload = function() {
     var $recaptcha = document.querySelector('#g-recaptcha-response');
