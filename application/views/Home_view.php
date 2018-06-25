@@ -50,6 +50,7 @@
 
 
 <div class="container-fluid collection-slider">
+<h1 class="display-4 text-center">Collections</h1>
   	<div class="swiper-container">
   		<div class="swiper-wrapper">
   		<!-- start for each -->

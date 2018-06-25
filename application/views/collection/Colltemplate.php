@@ -52,12 +52,6 @@
                     <ul class="list-group mb-3">
                       <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                          <small class="text-muted">ID</small>
-                          <p class="my-0"><?php echo $sample['record_id'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
                           <small class="text-muted">Title</small>
                           <p class="my-0"><?php echo $sample['marc_245_title_stmt'];?></p>
                         </div>
@@ -70,62 +64,7 @@
                       </li>
                       <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                          <small class="text-muted">Multi Language</small>
-                          <p class="my-0"><?php echo $sample['marc_041_multi_lang'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted">Main Author</small>
-                          <p class="my-0"><?php echo $sample['marc_100_main_pers_name'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted">Publication Year</small>
-                          <p class="my-0"><?php echo $sample['marc_260c_pub_year'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted">Additional Persons</small>
-                          <p class="my-0"><?php echo $sample['marc_700_add_pers_name'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted">Owner</small>
-                          <p class="my-0"><?php echo $sample['marc_110_main_corp_name'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted">Additional Owner</small>
-                          <p class="my-0"><?php echo $sample['marc_710_add_corp_name'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted">Uniform Titles</small>
-                          <p class="my-0"><?php echo $sample['marc_243_coll_uniform_title'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted">Location of Publishers</small>
-                          <p class="my-0"><?php echo $sample['marc_260_pub'];?></p>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted">Host Name</small>
-                          <p class="my-0">TBC</p>
-                        </div>
-                      </li>
-                      <li class="list-group-item justify-content-between lh-condensed">
-                        <div>
-                          <small class="text-muted" >Encore URL</small>
-                          <p title="External Link" class="my-0"><a href="<?php echo $sample['encore_url'] ?>" class="text-primary"><?php echo $sample['encore_url'] ?></a></p>
+                          <a class="btn btn-primary btn-sm" href="<?php echo base_url() . 'collection/' . $items[0]['url'] ?>/item/<?php echo $sample['record_id'] ?>" role="button">View Full Record</a>
                         </div>
                       </li>
                     </ul>
