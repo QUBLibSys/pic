@@ -26,7 +26,7 @@
 	<?php endif; ?>
 
 	<?php 
-	if ($this->router->fetch_class() == 'collection') : ?>
+	if ($this->uri->segment(3) == 'item') : ?>
     <!-- collection page og metadata -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@QUBSC">
