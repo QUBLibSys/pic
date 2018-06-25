@@ -13,12 +13,11 @@ class Collection extends CI_Controller{
         //$this->output->enable_profiler(TRUE);  
     }
 
-
     public function index (){
 
         $data = array(
-            'title'     =>  'All Collections',
-            'subtitle'  =>  'Choose A Collection Below',
+            'title'     	=>  'All Collections',
+            'subtitle'  	=>  'Choose A Collection Below',
             'collections'   =>  $this->search_model->getCollections()
             );
 
@@ -135,7 +134,7 @@ class Collection extends CI_Controller{
         $data = array(
             'items' 			=> $this->search_model->getCollectionByName($coll_name),
             'collections'   	=>  $this->search_model->getCollections(),
-            'collectionSample'   =>  $this->search_model->getCollectionSampleByName($coll_name),
+            'collectionSample' 	=>  $this->search_model->getCollectionSampleByName($coll_name),
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
@@ -174,8 +173,8 @@ class Collection extends CI_Controller{
 		if ( is_null($item) && is_null($item_id) ) {
         $data = array(
             'items' 			=> $this->search_model->getCollectionByName($coll_name),
-            'collections'   =>  $this->search_model->getCollections(),
-            'collectionSample'   =>  $this->search_model->getCollectionSampleByName($coll_name),
+            'collections'   	=>  $this->search_model->getCollections(),
+            'collectionSample'  =>  $this->search_model->getCollectionSampleByName($coll_name),
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
@@ -213,8 +212,8 @@ class Collection extends CI_Controller{
 		if ( is_null($item) && is_null($item_id) ) {
         $data = array(
             'items' 			=> $this->search_model->getCollectionByName($coll_name),
-            'collections'   =>  $this->search_model->getCollections(),
-            'collectionSample'   =>  $this->search_model->getCollectionSampleByName($coll_name),
+            'collections'   	=>  $this->search_model->getCollections(),
+            'collectionSample'  =>  $this->search_model->getCollectionSampleByName($coll_name),
             'collectionCount'   => $this->search_model->countAllRecordsByName($coll_name)
         );
 
