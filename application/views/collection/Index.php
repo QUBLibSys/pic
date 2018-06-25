@@ -9,7 +9,7 @@
 	<div class="container">
 	<?php foreach ($collections as $collection) : ?>
             <tr>
-                <p><a href="collection/<?php echo strtolower($collection->name);  ?>"><?php echo $collection->coll_name ?></a>   </p>
+                <p><a href="collection/<?php echo $collection->url?>"><?php echo $collection->coll_name ?></a>   </p>
         <?php endforeach; ?>
 	</div>
 </section>
