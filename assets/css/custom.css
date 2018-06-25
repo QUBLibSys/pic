@@ -293,10 +293,6 @@ body a {
 	}
 }
 
-
-
-
-
 /*LOADING SPINNER*/
 #loader {
 	position: absolute;
@@ -327,7 +323,6 @@ body a {
 }
 
 
-
 .email-button {
 	background-color: #004D7E;
 	border: none;
@@ -339,4 +334,8 @@ body a {
 	font-weight: bold;
 	padding: 2.5px;
 	border-radius: 3px;
+}
+
+.collection-slider h1.display-4 {
+	color: white;
 }
