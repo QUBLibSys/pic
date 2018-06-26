@@ -56,11 +56,10 @@ $shelfmark = !empty($sample['marc_099_coll_ident']) ? $sample['marc_099_coll_ide
 	
 	<hr>
     <!-- <a href="#" class="card-link">share | print | export to pdf | copy url</a> -->
-    <button type="button" class="btn btn-primary" onclick="printPage()">Print</button>
-    <button type="button" class="btn btn-primary" id="clickbind">Export to PDF</button>
-    <button type="button" class="btn btn-primary" onclick="copy()">Copy URL</button>
-
-    <button type="button" class="btn btn-primary" onclick="printPage()">Share</button>
+    <button type="button" class="btn btn-sm btn-outline-primary" onclick="printPage()">Print</button>
+    <!-- <button type="button" class="btn btn-primary" id="clickbind">Export to PDF</button> -->
+    <button type="button" class="btn btn-sm btn-outline-primary" onclick="copy()">Copy URL</button>
+    <!-- <button type="button" class="btn btn-primary" onclick="printPage()">Share</button> -->
   </div>
 </div>
 <?php endforeach; ?>
