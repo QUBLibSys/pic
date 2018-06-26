@@ -14,7 +14,7 @@
 	<meta name="DC.title" content="">
 	
 	<?php 
-	if (!$this->uri->segment(1)) : ?>
+	if (!$this->uri->segment(1) || $this->uri->segment(2) == 'results' ) : ?>
     <!-- homepage og metadata -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@QUBSC">
@@ -42,6 +42,7 @@
 	<meta name="DC.Type" content="Text">
 	<meta name="DC.Language" content="<?php echo $itemInfo[0]['marc_008_lang'];?>">
 	<?php endif; ?>	
+	
 	
 <title>Personal and Institutional Collections. Queen's University Belfast</title>
 <!-- Google Tag Manager -->
