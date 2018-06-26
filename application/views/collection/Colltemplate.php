@@ -64,7 +64,7 @@
                       </li>
                       <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                          <a class="btn btn-primary btn-sm" href="<?php echo base_url() . 'collection/' . $items[0]['url'] ?>/item/<?php echo $sample['record_id'] ?>" role="button">View Full Record</a>
+                          <a class="btn btn-outline primary btn-sm" href="<?php echo base_url() . 'collection/' . $items[0]['url'] ?>/item/<?php echo $sample['record_id'] ?>" role="button">View Full Record</a>
                         </div>
                       </li>
                     </ul>
