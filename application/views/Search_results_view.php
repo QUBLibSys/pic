@@ -174,26 +174,15 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
                       </li>
                       <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                          <small class="text-muted">Share this</small>
+                          <small class="text-muted">Share</small>
                           <br>
                           <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fpic%2Fsearch%2Fresults%2F%3Fq%3Dpercy%23<?php echo $result['record_id']?>&layout=button&size=small&mobile_iframe=true&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                          
                           <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="http://localhost/pic/search/results/?q=percy#<?php echo $result['record_id']?>" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-                          <button type="button" class="email-button" onclick="Copy();">Copy URL</button>
-                          <script type="text/javascript">
-                            function Copy(){
-                                    var box = document.createElement('input'),
-                                        text = window.location.href + "#<?php echo $result['record_id'] ?>";
-
-                                    document.body.appendChild(box);
-                                    box.value = text;
-                                    box.select();
-                                    document.execCommand('copy');
-                                    document.body.removeChild(box);
-
-                            }
-                          </script>
+                        </div>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                          <a class="btn btn-outline primary btn-sm" href="<?php echo base_url() . 'collection/' . $result['url'] ?>/item/<?php echo $result['record_id'] ?>" title="Open in New Window" role="button">Open in New Window</a>
                         </div>
                       </li>
                     </ul>
