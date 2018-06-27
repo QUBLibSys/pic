@@ -22,12 +22,12 @@
 			?>
 			<div class="input-group mb-4">
 				<div class="input-group-prepend">
-					<a href="#" class="btn btn-primary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Filter by collection">Filter</a>
+					<a href="#" class="btn btn-primary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Filter by collection">Collection</a>
 					<div class="dropdown-menu">
 						<?php foreach ($collections as $coll): ?>
-							<a href="#" class="dropdown-item" value="<?php echo $coll->collection_id ?>"><?php echo $coll->name ?></a>
+							<a href="#" class="dropdown-item" value="<?php echo $coll->collection_id ?>" title="<?php echo $coll->coll_name ?>"><?php echo $coll->name ?></a>
 						<?php endforeach; ?>
-						<a href="#" class="dropdown-item" value="All">All Collections</a>
+						<a href="#" class="dropdown-item" value="">All Collections</a>
 					</div>
 				</div>
 				<input type="text" name="q" class="form-control" placeholder="search term" aria-label="Select collection from left and enter search query">
@@ -35,7 +35,7 @@
 			</div> <!-- end input group -->
 			<div class="input-group">
 				<div class="input-group-prepend">
-					<span class="input-group-text" title="Filter by year">Filter by Year</span>
+					<span class="input-group-text" title="Filter by year">Year</span>
 				</div>
 				<input type="number" min="0" max="9999" name="start_year" class="form-control" placeholder="start year" maxlength="4" aria-label="Enter start year">
 				<input type="number" min="1" max="9999" name="end_year" class="form-control" placeholder="end year" maxlength="4" aria-label="Enter end year">
