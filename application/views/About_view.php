@@ -5,7 +5,7 @@
 			<p class="lead"><?php echo $subtitle ?></p>
 		<div class="row">
 			<div class="col-md">
-				<img src="http://via.placeholder.com/1500x250" class="img-fluid" alt="Responsive image">
+				<img src="<?php echo base_url() ?>assets/img/pic_about.jpg" class="img-fluid" alt="<?php echo $subtitle ?>" title="<?php echo $subtitle ?>">
 			</div>
 		</div>
 		</div>
