@@ -44,7 +44,7 @@
 	<?php endif; ?>	
 	
 	
-<title>Personal and Institutional Collections. Queen's University Belfast</title>
+<title><?php echo site_name ?> | Queen's University Belfast</title>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -104,7 +104,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-blue">
-		<a class="navbar-brand" href="<?php echo base_url() ?>" title="PIC Home"><strong>PIC</strong></a>
+		<a class="navbar-brand" href="<?php echo base_url() ?>" title="<?php echo site_name ?>"><strong>PIC</strong></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -112,21 +112,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Find a collection">Collections</a>
+					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Find a Collection">Collections</a>
 					<div class="dropdown-menu">
 						<?php foreach ($collections as $collection): ?>
-							<a href="<?php echo base_url(); ?>collection/<?php echo $collection->url ?>" class="dropdown-item collection-menu"><?php echo $collection->name ?></a>
+							<a href="<?php echo base_url(); ?>collection/<?php echo $collection->url ?>" title="<?php echo $collection->coll_name ?>" class="dropdown-item collection-menu"><?php echo $collection->name ?></a>
 						<?php endforeach; ?>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections" title="External Special Collections Site">Special Collections</a>
+					<a class="nav-link" href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections" title="Special Collections at Queen's University Belfast">Special Collections</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?php echo base_url('contact') ?>" title="Contact form">Contact</a>
+					<a class="nav-link" href="<?php echo base_url('contact') ?>" title="Contact <?php echo site_name ?>">Contact</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?php echo base_url().'about' ?>" title="About PIC">About</a>
+					<a class="nav-link" href="<?php echo base_url().'about' ?>" title="About <?php echo site_name ?>">About</a>
 				</li>
 			</ul>
 
