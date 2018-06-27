@@ -22,16 +22,17 @@
                 <div class="col-md-3">
                     <p>Links</p>
                     <ul class="list-unstyled text-small">
-                        <li><a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections/Manuscripts/" title="Special Collections Manuscripts">Manuscripts</a></li>
-                        <li><a href="http://www.rascal.ac.uk/" title="Explore in detail on RASCAL">RASCAL</a></li>
-                        <li><a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections/BooksandJournals/" title="Special Collections Journals">Books and Journals</a></li>
+						<li><a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections/BooksandJournals/" title="Special Collections - Journals">Books and Journals</a></li>
+                        <li><a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections/Manuscripts/" title="Special Collections - Manuscript Collections">Manuscripts</a></li>
+                        <li><a href="http://www.rascal.ac.uk/" title="RASCAL Website - Research And Special Collections Available Locally">RASCAL</a></li>
+                        
                     </ul>
                     <hr><p class="text"> &copy; <?php echo date("Y"); ?> Queen's University Belfast</p>
                 </div>
                 <div class="col-md-3">
                 <p>Social</p>
 				<div class="mb-3">
-					<a href="http://www.qub.ac.uk" target="_blank"><img src="<?php base_url() ?>assets/img/qub_logo_white_sm.png" alt="Queen's University Belfast" title="Queen's University Belfast"></a>
+					<a href="http://www.qub.ac.uk" target="_blank"><img src="<?php echo base_url('assets/img/qub_logo_white_sm.png'); ?>" alt="Queen's University Belfast" title="Queen's University Belfast"></a>
 				</div>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/specialcollectionsQUB"><img src="<?php echo base_url('assets/img/fb.png'); ?>" title="Special Collections Facebook" alt="Special Collections Facebook" width="30px"></a>
