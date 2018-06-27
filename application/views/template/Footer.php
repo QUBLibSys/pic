@@ -34,8 +34,8 @@
                 </style>
                 <p>Social</p>
                 <div class="social-icons">
-                    <a href="https://www.Facebook.com"><img src="<?php echo base_url('assets/img/fb.png'); ?>" alt="Facebook" width="50px"></a>
-                    <a href="https://www.twitter.com"><img src="<?php echo base_url('assets/img/tw.png'); ?>" alt="Twitter" width="50px"></a>
+                    <a href="https://www.facebook.com/specialcollectionsQUB"><img src="<?php echo base_url('assets/img/fb.png'); ?>" title="Special Collections Facebook" alt="Special Collections Facebook" width="30px"></a>
+                    <a href="https://twitter.com/QUBSC"><img src="<?php echo base_url('assets/img/tw.png'); ?>" title="Special Collections Twitter" alt="Special Collections Twitter" width="30px"></a>
                 </div>
             </div>
         </div>
