@@ -12,7 +12,7 @@ class Search_model extends CI_Model {
     
     // get all collection details
     public function getCollInfo() {
-        $this->db->select('collections.collection_id, name, collections.url, coll_info, logo, count(coll_id) AS count');
+        $this->db->select('collections.collection_id, name, coll_name, collections.url, coll_info, logo, count(coll_id) AS count');
         $this->db->from('collections');
         $this->db->join('records', 'collections.collection_id = records.coll_id', 'left');
         $this->db->group_by('collections.collection_id'); 

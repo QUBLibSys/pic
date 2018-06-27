@@ -5,7 +5,7 @@
 	
 	<section class="jumbotron text-center" aria-label="Page description">
 		<div class="container">
-			<h1 class="display-4 title-blue">Personal and Institutional Collections</h1>
+			<h1 class="display-4 title-blue"><?php echo site_name ?></h1>
 			<p class="lead">Welcome to a catalogue of some of the discrete library collections held in <a href="https://www.qub.ac.uk/directorates/InformationServices/TheLibrary/SpecialCollections"> Special Collections</a> at Queen's University Belfast. Eighteenth century publishing dominates the contents of these libraries, but earlier and later material is also found.</p> 
 			<p class="lead"> We have approximately <a href="<?php echo base_url() ?>/search"> <?php echo $recordCount->count ?> records </a> in our collection.</p>
 		</div>
@@ -68,12 +68,12 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12">
 								<div class="card" id="<?php echo $collection->name?>">
-										<img src="<?php echo base_url().$collection->logo ?>" class="img-thumbnail" alt="<?php echo $collection->name?> collection image">
+										<img src="<?php echo base_url().$collection->logo ?>" class="img-thumbnail" alt="<?php echo $collection->coll_name?> image">
 									<div class="card-content text-center">
-										<p style="font-size:1.5rem"><?php echo $collection->name ?> Collection</p>
+										<p style="font-size:1.5rem"><?php echo $collection->coll_name ?> </p>
 									</div>
 									<div class="card-footer">
-									<a class="btn btn-sm btn-primary" href="<?php echo base_url().'collection/'.$collection->url ?>" title="Browse and explore the <?php echo $collection->name?> collection">Search & Discover</a>
+									<a class="btn btn-sm btn-primary" href="<?php echo base_url().'collection/'.$collection->url ?>" title="Browse and explore the <?php echo $collection->coll_name?> ">Search & Discover</a>
    									</div>
 								</div>
 							</div>
