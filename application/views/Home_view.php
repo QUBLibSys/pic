@@ -41,7 +41,7 @@
 				<input type="number" min="1" max="9999" name="end_year" class="form-control" placeholder="end year" maxlength="4" aria-label="Enter end year">
 			</div>
 			<br>
-			<input class="btn btn-primary" type="submit" name="submit" title="Submit search query">
+			<input class="btn btn-primary" type="submit" title="Submit search query">
 			<input class="btn btn-default" type="reset" value="Reset" id="resetForm" title="Clear all search boxes">
 			<?php echo form_close(); ?>
 		</div>

@@ -11,7 +11,7 @@ else {
   $coll_term = NULL;
 }
 
-$coll_id = is_null($coll_id) ? 'Filter' : $coll_term;
+$coll_id = empty($coll_id) ? 'Collection' : $coll_term;
 
 // get array of search terms from URL
 $query_strings = array($term, $coll_id, $start_year, $end_year);
@@ -46,6 +46,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
               <?php foreach ($collections as $coll): ?>
                 <a href="#" class="dropdown-item" value="<?php echo $coll->collection_id ?>"><?php echo $coll->name ?></a>
               <?php endforeach; ?>
+			  <a href="#" class="dropdown-item" value="">All Collections</a>
             </div>
           </div>
           <input type="text" name="q" class="form-control" value="<?php echo $this->input->get('q') ?>" placeholder="search term" aria-label="Select collection from left and enter search query">
@@ -53,7 +54,7 @@ $comma_separated_search_terms = implode(', ', array_filter($query_strings));
         </div> <!-- end input group -->
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text" title="Enter start and end year">Filter by Year</span>
+            <span class="input-group-text" title="Enter start and end year">Year</span>
           </div>
           <input type="number" min="1100" max="3000" name="start_year" class="form-control" value="<?php echo $this->input->get('start_year') ?>" placeholder="start year" maxlength="4" aria-label="Enter start year">
           <input type="number" min="1100" max="3000" name="end_year" class="form-control" value="<?php echo $this->input->get('end_year') ?>" placeholder="end year" maxlength="4" aria-label="Enter end year">
