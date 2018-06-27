@@ -8,7 +8,7 @@
 <section class="text-center">
 	<div class="container">
 	<?php foreach ($collections as $collection) : ?>
-		<p><a href="collection/<?php echo $collection->url?>"><?php echo $collection->coll_name ?></a>   </p>
+		<p><a href="<?php echo $collection->url?>"><?php echo $collection->coll_name ?></a>   </p>
     <?php endforeach; ?>
 	</div>
 </section>
