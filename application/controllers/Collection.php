@@ -10,6 +10,8 @@ class Collection extends CI_Controller{
         $this->load->model('search_model');
         $this->load->helper('url');
         $this->load->helper('form');
+		$this->load->helper('social_share_links');
+		$this->load->helper('current_full_url');
         //$this->output->enable_profiler(TRUE);  
     }
 
